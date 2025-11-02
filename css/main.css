@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "cantarellregular";
+  src: url("../fonts/cantarell_regular-webfont.woff2") format("woff2"), url("../fonts/cantarell_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: helvetica, arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "cantarellregular", helvetica, arial;
+}
+
+h2 {
+  font-size: 36px;
+  color: #BA3B0A;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+p {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+#main-header {
+  background-color: white;
+  margin-bottom: 20px;
+}
+#main-header #logo-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-header #logo {
+  margin-top: 20px;
+  max-width: 300px;
+}
+#main-header #main-nav {
+  margin-top: 40px;
+  background-color: #FFA458;
+  border-radius: 20px 0 20px 0;
+}
+#main-header #main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 20px 0 20px 0;
+}
+#main-header #main-nav ul li {
+  margin: 0 20px 0 20px;
+}
+#main-header #main-nav a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+#main-header #main-nav a:hover {
+  color: #666;
+}
+
+@media screen and (min-width: 768px) {
+  #main-header #main-nav ul {
+    justify-content: flex-end;
+  }
+  #main-header #logo-con {
+    display: block;
+  }
+}
+.card {
+  padding: 40px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease-in-out;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    margin: 0 0 40px 0;
+    padding: 20px;
+  }
+}
+footer {
+  background-color: #BA3B0A;
+  color: white;
+  height: 80px;
+  padding: 20px;
+  display: grid;
+  text-align: center;
+  border-radius: 20px 0 20px 0;
+}
+footer p {
+  font-size: 18px;
+  margin: 0;
+  line-height: 0;
+}
+
+#about-us {
+  margin-bottom: 40px;
+}
+
+#contact-form input, #contact-form textarea {
+  display: block;
+  border: solid 1px darkgray;
+  padding: 20px;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+#contact-form textarea {
+  height: 200px;
+}
+
+#contact-form #submit {
+  background-color: #e85920;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#contact-form #submit:hover {
+  filter: saturate(120%);
+}
+
+@media screen and (min-width: 768px) {
+  #contact-form #submit {
+    max-width: 300px;
+  }
+}/*# sourceMappingURL=main.css.map */

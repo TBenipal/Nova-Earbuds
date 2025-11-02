@@ -1,0 +1,17 @@
+@use '../abstracts';
+
+footer {
+    background-color: abstracts.$accent-color;
+    color: white;
+    height: 80px;
+    padding: 20px;
+    display: grid;
+    text-align: center;
+    @include abstracts.borderRad(20px);
+
+    p {
+        font-size: 18px;
+        margin: 0;
+        line-height: 0;
+    }
+}
