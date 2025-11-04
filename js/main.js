@@ -36,7 +36,7 @@
     showAnnotation(selected);
   }
 
-    // Event Listeners
-    hotspots.forEach(ClickListener);
+  // Event Listeners
+  hotspots.forEach(ClickListener);
 
 })();
