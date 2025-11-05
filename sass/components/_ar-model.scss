@@ -23,17 +23,16 @@ model-viewer {
 }
 
 .HotspotAnnotation {
+  display: flex;
+  flex-direction: row;
   background: #000;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   color: #ff9100;
-  display: block;
   font-size: 16px;
   font-weight: 600;
   left: calc(100% + 1em);
-  max-width: 220px;
-  overflow-wrap: break-word;
-  padding: 0.75em 1em;
+  max-width: 300px;
   position: absolute;
   top: 50%;
   width: max-content;
@@ -48,17 +47,30 @@ model-viewer {
   opacity: 1;
 }
 
+.HotspotAnnotation div {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 1vw 1vw 1vw 0vw;
+  margin-left: 1vw;
+}
+
+.HotspotAnnotation img {
+  padding: 0vw 1vw;
+  background-color: orangered;
+}
+
 .HotspotAnnotation h2 {
   font-size: 18px;
   letter-spacing: 2px;
-  margin-bottom: 5px;
   color: #fff;
+  margin-bottom: 5px;
 }
 
 .HotspotAnnotation p {
   color: #ff9100;
-  line-height: 22px;
   font-weight: 600;
+  margin-top: 0px;
 }
 
 model-viewer::part(default-progress-bar) {
