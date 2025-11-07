@@ -1,107 +1,99 @@
 (() => {
   const hotspots = document.querySelectorAll(".Hotspot");
-  const annotations = document.querySelectorAll(".HotspotAnnotation");
   const infoBoxes = [
     {
-      image: "images/Hotspot-1.svg",
+      image: "images/hyper-charging.svg",
       title: "Hyper Charging:",
-      text: "0 to 100% in 15 Minutes"
+      text: "0 to 100% in 20 Minutes"
     },
     {
-      image: "images/Hotspot-1.svg",
+      image: "images/cloud-fit.svg",
       title: "Cloud Fit:",
       text: "All-Day Wear, Zero Fatigue"
     },
     {
-      image: "images/Hotspot-1.svg",
-      title: "Earring Lock:",
-      text: "Locks under any ear to avoid earbuds from falling at any cost"
+      image: "images/open-ear design.png",
+      title: "Open-Ear Design:",
+      text: "Locks over & under a ear to avoid earbuds from falling"
     },
     {
-      image: "images/Hotspot-1.svg",
-      title: "Earring Fit:",
-      text: "Earbuds that will look just like Earrings when wore on"
+      image: "images/audio-earring.png",
+      title: "Audio Earrings:",
+      text: "Earbuds that fit & look like earrings when wore"
     },
     {
-      image: "images/Hotspot-1.svg",
-      title: "NOVA:",
-      text: "Welcome to the future of electronics!"
-    },
+      image: "images/fingerprint.svg",
+      title: "Touch Control:",
+      text: "Control the actions with just a touch"
+    }
   ]
 
 
   //Array Functions
   function loadInfo() {
-      infoBoxes.forEach((infoBox, index) => {
-        //console.log(index+1);
-        let selected = document.querySelector(`#hotspot-${index+1}`);
-        console.log(selected);
+    infoBoxes.forEach((infoBox, index) => {
+      let selected = document.querySelector(`#hotspot-${index+1}`);
+      console.log(selected);
 
-        const container = document.createElement('div');
+      // text container
+      const container = document.createElement('div');
+      container.id = "text-box";
 
+      // image container div
+      const imageContainer = document.createElement('div');
+      imageContainer.id = "image-box"; // add id to your image div
 
-        //Create h2 in JS
-        const titleElement = document.createElement('h2');
+      // Create the image element
+      const imageElement = document.createElement('img');
+      imageElement.src = infoBox.image;
+      imageElement.alt = infoBox.title;
 
-        //Add text in h2
-        titleElement.textContent = infoBox.title;
+      // Add image inside image container
+      imageContainer.appendChild(imageElement);
 
-        //Create text in JS
-        const textElement = document.createElement('p');
+      // Create and add text content
+      const titleElement = document.createElement('h2');
+      titleElement.textContent = infoBox.title;
 
-        //Add text in text
-        textElement.textContent = infoBox.text;
+      const textElement = document.createElement('p');
+      textElement.textContent = infoBox.text;
 
-        const imageElement = document.createElement('img');
-        imageElement.src = infoBox.image;
-        imageElement.alt = infoBox.title;
+      // Append text to container
+      container.appendChild(titleElement);
+      container.appendChild(textElement);
 
-        //Apply it
-        container.appendChild(titleElement);
-        container.appendChild(textElement);
-        selected.appendChild(imageElement);
-        selected.appendChild(container);
+      // Append both image and text containers to selected hotspot
+      selected.appendChild(imageContainer);
+      selected.appendChild(container);
 
-        // Initially hide all info boxes
-        gsap.set(selected, { autoAlpha: 0 });
+      gsap.set(selected, { autoAlpha: 0 });
     });
   }
+
 
   loadInfo();
 
   // Functions
-  function hideAnnotation(annotation) {
-    annotation.classList.remove("active");
-    gsap.to(annotation, { duration: 0.25, autoAlpha: 0 });
+  function showInfo() {
+    //console.log(this.slot);
+    //console.log(`#${this.slot}`);
+    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
+    let selected = document.querySelector(`#${this.slot}`);
+    gsap.to(selected, { duration: .1, autoAlpha: 1 });
   }
 
-  function showAnnotation(annotation) {
-    annotation.classList.add("active");
-    gsap.fromTo(annotation, { autoAlpha: 0, y: -8 }, { duration: 0.35, autoAlpha: 1, y: 0 });
+  function hideInfo() {
+    //console.log(this.slot);
+    //console.log(`#${this.slot}`);
+    let selected = document.querySelector(`#${this.slot}`);
+    gsap.to(selected, { duration: .1, autoAlpha: 0 });
   }
-
-  function hideAllAnnotations() {
-    for (let i = 0; i < annotations.length; i = i + 1) {
-      hideAnnotation(annotations[i]);
-    }
-  }
-
-  function showHoverAnnotation() {
-    const selected = document.querySelector(`#${this.slot}`);
-    hideAllAnnotations();
-    showAnnotation(selected);
-  }
-
-  function hideHoverAnnotation() {
-    const selected = document.querySelector(`#${this.slot}`);
-    hideAnnotation(selected);
-  }
-
-  // Event Listeners
-  hotspots.forEach(function(hotspot) {
-    hotspot.addEventListener("mouseenter", showHoverAnnotation);
-    hotspot.addEventListener("mouseleave", hideHoverAnnotation);
+  
+ hotspots.forEach(function (hotspot) {
+    hotspot.addEventListener("mouseenter", showInfo);
+    hotspot.addEventListener("mouseleave", hideInfo);
   });
+
 
   
 })();

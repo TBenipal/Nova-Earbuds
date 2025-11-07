@@ -1,4 +1,5 @@
 model-viewer {
+  position: relative; // parent stacking context
   width: auto;
   max-width: 1200px;
   height: 700px;
@@ -6,9 +7,18 @@ model-viewer {
   margin: 0 auto;
 }
 
+// All Hotspots
+.letter {
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
 .Hotspot {
-  background: url(../images/Hotspot-1.svg) center no-repeat;
-  border: 0;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  border: none;
   cursor: pointer;
   height: 50px;
   width: 50px;
@@ -20,19 +30,21 @@ model-viewer {
 
 .Hotspot:hover {
   transform: scale(1.1);
+  background-color: white;
+  color: black;
 }
 
 .HotspotAnnotation {
   display: flex;
   flex-direction: row;
   background: #000;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(1, 1, 1, 1);
   color: #ff9100;
   font-size: 16px;
   font-weight: 600;
   left: calc(100% + 1em);
-  max-width: 300px;
+  max-width: 375px;
   position: absolute;
   top: 50%;
   width: max-content;
@@ -40,6 +52,12 @@ model-viewer {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s ease;
+  z-index: 999;
+}
+
+.HotspotAnnotation:hover {
+  transform: scale(1.05);
+  transition: 0.1s ease-in-out;
 }
 
 .HotspotAnnotation.active {
@@ -47,30 +65,76 @@ model-viewer {
   opacity: 1;
 }
 
-.HotspotAnnotation div {
+.HotspotAnnotation #text-box {
   display: flex;
   flex-direction: column;
   width: auto;
-  padding: 1vw 1vw 1vw 0vw;
+  padding: .5vw 1vw .5vw 0vw;
   margin-left: 1vw;
 }
 
-.HotspotAnnotation img {
-  padding: 0vw 1vw;
-  background-color: orangered;
+
+.HotspotAnnotation #image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9100;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .HotspotAnnotation h2 {
   font-size: 18px;
   letter-spacing: 2px;
   color: #fff;
+  margin-left: 10px;
   margin-bottom: 5px;
 }
 
 .HotspotAnnotation p {
   color: #ff9100;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 600;
   margin-top: 0px;
+  margin-left: 10px;
+}
+
+//Hotspot A
+#hs-5 #image-box img {
+  padding: 0px 10px;
+  height: 70px;
+  width: auto;
+}
+
+//Hotspot B
+#hs-1 #image-box img {
+  padding: 0px 20px;
+  height: 40px;
+  width: auto;
+}
+
+//Hotspot C
+#hs-3 #image-box img {
+  padding: 0px 20px;
+  height: 80px;
+  width: auto;
+}
+
+//Hotspot D
+#hs-2 #image-box img {
+  padding: 15px 20px;
+  height: 60px;
+  width: auto;
+}
+
+//Hotspot E
+#hs-4 #image-box img {
+  padding: 0px 20px;
+  height: 85px;
+  width: auto;
 }
 
 model-viewer::part(default-progress-bar) {
