@@ -149,6 +149,55 @@
 
 
   // GSAP Animation
+  function showFeature() {
+    let feature = document.querySelector(`#${this.slot}`);
+    const screen = window.innerWidth;
+
+    if (screen < 720) {
+        if (this.slot === "feature-1") {
+          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-2") {
+          gsap.fromTo(feature, { x: -150, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-3") {
+          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-4") {
+          gsap.fromTo(feature, { x: -250, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-5") {
+          gsap.fromTo(feature, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        }
+      } 
+
+      else if (screen >= 720) {
+        if (this.slot === "feature-1") {
+          gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-2") {
+          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-3") {
+          gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-4") {
+          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-5") {
+          gsap.from(feature, { y: 400, opacity: 0, duration: 0.9 });
+        }
+      } 
+  }
+
+  window.addEventListener("load", () => {
+    showFeature.call({ slot: "feature-1" });
+    showFeature.call({ slot: "feature-2" });
+    showFeature.call({ slot: "feature-3" });
+    showFeature.call({ slot: "feature-4" });
+    showFeature.call({ slot: "feature-5" });
+  });
+
 
   //Event Listeners
   hotspots.forEach(function (hotspot) {
