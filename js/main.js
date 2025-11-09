@@ -12,28 +12,32 @@
       text: "All-Day Wear, Zero Fatigue"
     },
     {
-      image: "images/open-ear design.png",
+      image: "images/open-ear-design.svg",
       title: "Open-Ear Design:",
-      text: "Locks over & under a ear to avoid earbuds from falling"
+      text: "Avoids The Earbuds From Falling"
     },
     {
-      image: "images/audio-earring.png",
+      image: "images/audio-earring.svg",
       title: "Audio Earrings:",
-      text: "Earbuds that fit & look like earrings when wore"
+      text: "Earbuds That Look Like Earrings"
     },
     {
       image: "images/fingerprint.svg",
       title: "Touch Control:",
-      text: "Control the actions with just a touch"
+      text: "Control Actions With Single Touch"
     }
   ]
 
-
-  //Array Functions
+  //Functions
+  //Array Functions Desktop
   function loadInfo() {
     infoBoxes.forEach((infoBox, index) => {
       let selected = document.querySelector(`#hotspot-${index+1}`);
       console.log(selected);
+
+      // main container
+      const hotspotContainer = document.createElement('div');
+      hotspotContainer.className = "info-container";
 
       // text container
       const container = document.createElement('div');
@@ -41,15 +45,12 @@
 
       // image container div
       const imageContainer = document.createElement('div');
-      imageContainer.id = "image-box"; // add id to your image div
+      imageContainer.id = "image-box";
 
       // Create the image element
       const imageElement = document.createElement('img');
       imageElement.src = infoBox.image;
       imageElement.alt = infoBox.title;
-
-      // Add image inside image container
-      imageContainer.appendChild(imageElement);
 
       // Create and add text content
       const titleElement = document.createElement('h2');
@@ -58,18 +59,23 @@
       const textElement = document.createElement('p');
       textElement.textContent = infoBox.text;
 
+      // Add image inside image container
+      imageContainer.appendChild(imageElement);
+
       // Append text to container
       container.appendChild(titleElement);
       container.appendChild(textElement);
 
-      // Append both image and text containers to selected hotspot
-      selected.appendChild(imageContainer);
-      selected.appendChild(container);
+      // Append image and text to wrapper
+      hotspotContainer.appendChild(imageContainer);
+      hotspotContainer.appendChild(container);
+
+      // Append main div to hotspot
+      selected.appendChild(hotspotContainer);
 
       gsap.set(selected, { autoAlpha: 0 });
     });
   }
-
 
   loadInfo();
 
@@ -88,12 +94,66 @@
     let selected = document.querySelector(`#${this.slot}`);
     gsap.to(selected, { duration: .1, autoAlpha: 0 });
   }
-  
- hotspots.forEach(function (hotspot) {
+
+  // Mobile and Tablet Array Functions
+  function loadMobileFeatures() {
+
+    //Main div
+    const mobileContainer = document.querySelector(".mobile-features");
+
+    infoBoxes.forEach((infoBox, index) => {
+
+      //Create the feature div
+      const featurebox = document.createElement("div");
+      featurebox.className = "feature";
+      featurebox.id = `feature-${index + 1}`;
+
+      // Create the image box
+      const imageBox = document.createElement("div");
+      imageBox.id = "image-box";
+
+      // Create the img element
+      const img = document.createElement("img");
+      img.src = infoBox.image;
+      img.alt = infoBox.title;
+
+      //Img append with the image box
+      imageBox.appendChild(img);
+
+      //Create the div for text
+      const textBox = document.createElement("div");
+      textBox.className = "text-box";
+
+      //Create the text h2 and p
+      const titleElement = document.createElement("h2");
+      titleElement.textContent = infoBox.title;
+
+      const textElement = document.createElement("p");
+      textElement.textContent = infoBox.text;
+
+      //Apped text with the text box
+      textBox.appendChild(titleElement);
+      textBox.appendChild(textElement);
+
+      //Append the boxes with the main div featurebox
+      featurebox.appendChild(imageBox);
+      featurebox.appendChild(textBox);
+
+      //Append the featurebox with the main div 
+      mobileContainer.appendChild(featurebox);
+
+    });
+  }
+
+  loadMobileFeatures();
+
+
+  // GSAP Animation
+
+  //Event Listeners
+  hotspots.forEach(function (hotspot) {
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
-
-
   
 })();
