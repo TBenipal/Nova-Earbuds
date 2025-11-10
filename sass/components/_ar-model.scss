@@ -1,6 +1,8 @@
+@use '../abstracts';
+
 body {
   overflow-x: hidden;
-  background-color: black;
+  background-color: abstracts.$third-color;
 }
 
 model-viewer {
@@ -8,7 +10,7 @@ model-viewer {
   width: 95%;
   max-width: 1200px;
   height: 500px;
-  background-color: #fff;
+  background-color: abstracts.$secondary-color;
   margin: 0px auto;
 }
 
@@ -26,7 +28,7 @@ model-viewer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #ff9100;
+  background-color: abstracts.$primary-color;
   height: auto;
   margin: 10px 0px;
   border-radius: 25px;
@@ -64,11 +66,11 @@ model-viewer {
 
 @media screen and (min-width: 720px) { 
     model-viewer {
-      position: relative; // parent stacking context
+      position: relative;
       width: auto;
       max-width: 1200px;
       height: 600px;
-      background-color: #fff;
+      background-color: abstracts.$secondary-color;
       margin: 0 auto;
   }
 
@@ -76,7 +78,7 @@ model-viewer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    justify-items: center; /* centers items within their cells */
+    justify-items: center;
     margin-top: 15px;
   }
 
@@ -95,11 +97,11 @@ model-viewer {
 
 @media screen and (min-width: 1200px) {
   model-viewer {
-    position: relative; // parent stacking context
+    position: relative;
     width: auto;
     max-width: 1200px;
     height: 700px;
-    background-color: #fff;
+    background-color: abstracts.$secondary-color;
     margin: 0 auto;
   }
 
@@ -115,8 +117,8 @@ model-viewer {
   }
 
   .Hotspot {
-    background-color: black;
-    color: white;
+    background-color: abstracts.$third-color;
+    color: abstracts.$des-text-color;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -130,17 +132,17 @@ model-viewer {
 
   .Hotspot:hover {
     transform: scale(1.1);
-    background-color: white;
-    color: black;
+    background-color: abstracts.$secondary-color;
+    color: abstracts.$third-color;
   }
 
   .HotspotAnnotation {
     display: flex;
     flex-direction: row;
-    background: #000;
+    background: abstracts.$third-color;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(1, 1, 1, 1);
-    color: #ff9100;
+    color: abstracts.$primary-color;
     font-size: 16px;
     font-weight: 600;
     left: calc(100% + 1em);
@@ -167,7 +169,7 @@ model-viewer {
 
   .info-container {
     display: flex;
-    flex-direction: row; // row for side by side, column for stacked
+    flex-direction: row;
     align-items: center;
     padding: 0px;
     margin: 0px;
@@ -187,7 +189,7 @@ model-viewer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ff9100;
+    background-color: abstracts.$primary-color;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 0px;
@@ -197,13 +199,13 @@ model-viewer {
   .HotspotAnnotation h2 {
     font-size: 18px;
     letter-spacing: 2px;
-    color: #fff;
+    color: abstracts.$des-text-color;
     margin-left: 10px;
     margin-bottom: 5px;
   }
 
   .HotspotAnnotation p {
-    color: #ff9100;
+    color: abstracts.$des-body-text-color;
     font-size: 14px;
     line-height: 18px;
     font-weight: 600;
@@ -254,6 +256,6 @@ model-viewer {
 
   model-viewer::part(default-progress-bar) {
     height: 4px;
-    background-color: #ff9100;
+    background-color: abstracts.$primary-color;
   }
 }

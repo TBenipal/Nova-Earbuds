@@ -173,10 +173,10 @@
 
       else if (screen >= 720) {
         if (this.slot === "feature-1") {
-          gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+          gsap.fromTo(feature, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
         } 
         else if (this.slot === "feature-2") {
-          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
         } 
         else if (this.slot === "feature-3") {
           gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
