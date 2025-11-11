@@ -162,11 +162,6 @@ model-viewer {
     transition: 0.1s ease-in-out;
   }
 
-  .HotspotAnnotation.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
   .info-container {
     display: flex;
     flex-direction: row;

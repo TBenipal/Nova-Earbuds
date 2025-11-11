@@ -74,6 +74,7 @@
       selected.appendChild(hotspotContainer);
 
       gsap.set(selected, { autoAlpha: 0 });
+      
     });
   }
 
@@ -103,7 +104,7 @@
 
     infoBoxes.forEach((infoBox, index) => {
 
-      //Create the feature div
+      //Create the feature div on each increease +1 from 0 so it starts from feature-1
       const featurebox = document.createElement("div");
       featurebox.className = "feature";
       featurebox.id = `feature-${index + 1}`;
@@ -117,8 +118,6 @@
       img.src = infoBox.image;
       img.alt = infoBox.title;
 
-      //Img append with the image box
-      imageBox.appendChild(img);
 
       //Create the div for text
       const textBox = document.createElement("div");
@@ -131,7 +130,8 @@
       const textElement = document.createElement("p");
       textElement.textContent = infoBox.text;
 
-      //Apped text with the text box
+      //Append elements to there boxes
+      imageBox.appendChild(img);
       textBox.appendChild(titleElement);
       textBox.appendChild(textElement);
 
@@ -148,7 +148,7 @@
   loadMobileFeatures();
 
 
-  // GSAP Animation
+  // GSAP Animation for each feature box
   function showFeature() {
     let feature = document.querySelector(`#${this.slot}`);
     const screen = window.innerWidth;
