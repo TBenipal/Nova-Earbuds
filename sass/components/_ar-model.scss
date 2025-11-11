@@ -10,7 +10,7 @@ model-viewer {
   width: 95%;
   max-width: 1200px;
   height: 500px;
-  background-color: abstracts.$secondary-color;
+  background-color: abstracts.$accent-color;
   margin: 0px auto;
 }
 
@@ -70,7 +70,7 @@ model-viewer {
       width: auto;
       max-width: 1200px;
       height: 600px;
-      background-color: abstracts.$secondary-color;
+      background-color: abstracts.$accent-color;
       margin: 0 auto;
   }
 
@@ -101,7 +101,7 @@ model-viewer {
     width: auto;
     max-width: 1200px;
     height: 700px;
-    background-color: abstracts.$secondary-color;
+    background-color: abstracts.$accent-color;
     margin: 0 auto;
   }
 

@@ -35,7 +35,7 @@ model-viewer {
   width: 95%;
   max-width: 1200px;
   height: 500px;
-  background-color: white;
+  background-color: orange;
   margin: 0px auto;
 }
 
@@ -95,7 +95,7 @@ model-viewer {
     width: auto;
     max-width: 1200px;
     height: 600px;
-    background-color: white;
+    background-color: orange;
     margin: 0 auto;
   }
   .mobile-features {
@@ -121,7 +121,7 @@ model-viewer {
     width: auto;
     max-width: 1200px;
     height: 700px;
-    background-color: white;
+    background-color: orange;
     margin: 0 auto;
   }
   .mobile-features {
@@ -174,10 +174,6 @@ model-viewer {
   .HotspotAnnotation:hover {
     transform: scale(1.05);
     transition: 0.1s ease-in-out;
-  }
-  .HotspotAnnotation.active {
-    visibility: visible;
-    opacity: 1;
   }
   .info-container {
     display: flex;
