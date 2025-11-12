@@ -72,7 +72,7 @@
           gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
         } 
         else if (this.slot === "feature-5") {
-          gsap.from(feature, { y: 400, opacity: 0, duration: 0.9 });
+          gsap.fromTo(feature, {opacity: 0 }, {opacity: 1, duration: 1.5 });
         }
       } 
   }

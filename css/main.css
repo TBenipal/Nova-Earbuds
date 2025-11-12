@@ -50,8 +50,6 @@ p {
 
 #mobile-header {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -126,12 +124,14 @@ nav ul {
   }
   #header-section {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
   }
-  #nav-bar {
-    display: flex;
+  nav ul {
+    display: block;
+  }
+  nav ul li {
+    display: inline-block;
   }
   nav ul li a {
     color: #ff9100;
@@ -236,6 +236,9 @@ model-viewer {
     height: 600px;
     background-color: orange;
     margin: 0 auto;
+  }
+  #model {
+    width: 95%;
   }
   .mobile-features {
     display: grid;
