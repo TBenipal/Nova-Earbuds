@@ -71,190 +71,194 @@ model-viewer {
 
 @media screen and (min-width: 720px) { 
     model-viewer {
-      position: relative;
-      width: auto;
-      height: 600px;
-      background-color: abstracts.$accent-color;
-      margin: 0 auto;
-  }
+        position: relative;
+        width: auto;
+        height: 600px;
+        background-color: abstracts.$accent-color;
+        margin: 0 auto;
+    }
 
-  .mobile-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    justify-items: center;
-    margin-top: 15px;
-  }
+    #model {
+        width: 95%;
+    }
 
-  .feature {
-    width: 100%;
-    margin: 0;
-  }
+    .mobile-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+        margin-top: 15px;
+    }
 
-  .feature:nth-child(5) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 50%;
-  }
+    .feature {
+        width: 100%;
+        margin: 0;
+    }
 
+    .feature:nth-child(5) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  model-viewer {
-    position: relative;
-    width: auto;
-    max-width: 100%;
-    height: 700px;
-    background-color: abstracts.$accent-color;
-    margin: 0 auto;
-  }
 
-  .mobile-features {
-    display: none;
-  }
+    model-viewer {
+        position: relative;
+        width: auto;
+        max-width: 100%;
+        height: 700px;
+        background-color: abstracts.$accent-color;
+        margin: 0 auto;
+    }
 
-    // All Hotspots
-  .letter {
-    font-size: 24px;
-    font-weight: 800;
-    margin-top: 15px;
-  }
+    .mobile-features {
+        display: none;
+    }
 
-  .Hotspot {
-    background-color: abstracts.$third-color;
-    color: abstracts.$des-text-color;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+        // All Hotspots
+    .letter {
+        font-size: 24px;
+        font-weight: 800;
+        margin-top: 15px;
+    }
 
-  .Hotspot:hover {
-    transform: scale(1.1);
-    background-color: abstracts.$secondary-color;
-    color: abstracts.$third-color;
-  }
+    .Hotspot {
+        background-color: abstracts.$third-color;
+        color: abstracts.$des-text-color;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  .HotspotAnnotation {
-    display: flex;
-    flex-direction: row;
-    background: abstracts.$third-color;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(1, 1, 1, 1);
-    color: abstracts.$primary-color;
-    font-size: 16px;
-    font-weight: 600;
-    left: calc(100% + 1em);
-    max-width: 375px;
-    position: absolute;
-    top: 50%;
-    width: max-content;
-    text-align: left;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 999;
-  }
+    .Hotspot:hover {
+        transform: scale(1.1);
+        background-color: abstracts.$secondary-color;
+        color: abstracts.$third-color;
+    }
 
-  .HotspotAnnotation:hover {
-    transform: scale(1.05);
-    transition: 0.1s ease-in-out;
-  }
+    .HotspotAnnotation {
+        display: flex;
+        flex-direction: row;
+        background: abstracts.$third-color;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(1, 1, 1, 1);
+        color: abstracts.$primary-color;
+        font-size: 16px;
+        font-weight: 600;
+        left: calc(100% + 1em);
+        max-width: 375px;
+        position: absolute;
+        top: 50%;
+        width: max-content;
+        text-align: left;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 999;
+    }
 
-  .info-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
-    height: auto;
-  }
+    .HotspotAnnotation:hover {
+        transform: scale(1.05);
+        transition: 0.1s ease-in-out;
+    }
 
-  .HotspotAnnotation #text-box {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    padding: .5vw 1vw .5vw 0vw;
-    margin-left: 1vw;
-  }
+    .info-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        height: auto;
+    }
+
+    .HotspotAnnotation #text-box {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: .5vw 1vw .5vw 0vw;
+        margin-left: 1vw;
+    }
 
 
-  .HotspotAnnotation #image-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: abstracts.$primary-color;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
+    .HotspotAnnotation #image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: abstracts.$primary-color;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
 
-  .HotspotAnnotation h2 {
-    font-size: 18px;
-    letter-spacing: 2px;
-    color: abstracts.$des-text-color;
-    margin-left: 10px;
-    margin-bottom: 5px;
-  }
+    .HotspotAnnotation h2 {
+        font-size: 18px;
+        letter-spacing: 2px;
+        color: abstracts.$des-text-color;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
 
-  .HotspotAnnotation p {
-    color: abstracts.$des-body-text-color;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 600;
-    margin-top: 0px;
-    margin-left: 10px;
-  }
+    .HotspotAnnotation p {
+        color: abstracts.$des-body-text-color;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-left: 10px;
+    }
 
-  .HotspotAnnotation #image-box {
-    height: 100%;
-    width: auto;
-  }
+    .HotspotAnnotation #image-box {
+        height: 100%;
+        width: auto;
+    }
 
-  //Hotspot A
-  
-  #hs-5 #image-box img {
-    padding: 0px 10px;
-    height: 75px;
-    width: auto;
-  }
+    //Hotspot A
+    
+    #hs-5 #image-box img {
+        padding: 0px 10px;
+        height: 75px;
+        width: auto;
+    }
 
-  //Hotspot B
-  #hs-1 #image-box img {
-    padding: 0px 20px;
-    height: 40px;
-    width: auto;
-  }
+    //Hotspot B
+    #hs-1 #image-box img {
+        padding: 0px 20px;
+        height: 40px;
+        width: auto;
+    }
 
-  //Hotspot C
-  #hs-3 #image-box img {
-    padding: 0px 20px;
-    height: 70px;
-    width: auto;
-  }
+    //Hotspot C
+    #hs-3 #image-box img {
+        padding: 0px 20px;
+        height: 70px;
+        width: auto;
+    }
 
-  //Hotspot D
-  #hs-2 #image-box img {
-    padding: 15px 15px;
-    height: 80px;
-    width: auto;
-  }
+    //Hotspot D
+    #hs-2 #image-box img {
+        padding: 15px 15px;
+        height: 80px;
+        width: auto;
+    }
 
-  //Hotspot E
-  #hs-4 #image-box img {
-    padding: 0px 20px;
-    height: 70px;
-    width: auto;
-  }
+    //Hotspot E
+    #hs-4 #image-box img {
+        padding: 0px 20px;
+        height: 70px;
+        width: auto;
+    }
 
-  model-viewer::part(default-progress-bar) {
-    height: 4px;
-    background-color: abstracts.$primary-color;
-  }
+    model-viewer::part(default-progress-bar) {
+        height: 4px;
+        background-color: abstracts.$primary-color;
+    }
 }
