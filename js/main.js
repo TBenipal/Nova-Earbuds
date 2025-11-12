@@ -1,5 +1,10 @@
 (() => {
+  const hamburger = document.querySelector("#hamburger-menu");
+  const mobileMenu = document.querySelector("#side-bar");
+  const icon = document.querySelector(".hamburger-icon");
   const hotspots = document.querySelectorAll(".Hotspot");
+  const divisor = document.querySelector("#divisor");
+  const slider = document.querySelector("#slider");
   const infoBoxes = [
     {
       image: "images/hyper-charging.svg",
@@ -28,7 +33,71 @@
     }
   ]
 
+  //GSAP - Animation
+  
+  // GSAP Animation for each feature box
+  function showFeature() {
+    let feature = document.querySelector(`#${this.slot}`);
+    const screen = window.innerWidth;
+
+    if (screen < 720) {
+        if (this.slot === "feature-1") {
+          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-2") {
+          gsap.fromTo(feature, { x: -150, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-3") {
+          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-4") {
+          gsap.fromTo(feature, { x: -250, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-5") {
+          gsap.fromTo(feature, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        }
+      } 
+
+      else if (screen >= 720) {
+        if (this.slot === "feature-1") {
+          gsap.fromTo(feature, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
+        } 
+        else if (this.slot === "feature-2") {
+          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
+        } 
+        else if (this.slot === "feature-3") {
+          gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-4") {
+          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        } 
+        else if (this.slot === "feature-5") {
+          gsap.from(feature, { y: 400, opacity: 0, duration: 0.9 });
+        }
+      } 
+  }
+
+  window.addEventListener("load", () => {
+    showFeature.call({ slot: "feature-1" });
+    showFeature.call({ slot: "feature-2" });
+    showFeature.call({ slot: "feature-3" });
+    showFeature.call({ slot: "feature-4" });
+    showFeature.call({ slot: "feature-5" });
+  });
+
   //Functions
+
+  // Menu
+  function toggleMenu() {
+    mobileMenu.classList.toggle("active");
+    icon.classList.toggle("active");
+  }
+
+  function hideMenu() {
+    mobileMenu.classList.remove("active");
+    icon.classList.remove("active");
+  }
+
   //Array Functions Desktop
   function loadInfo() {
     infoBoxes.forEach((infoBox, index) => {
@@ -146,6 +215,24 @@
   }
 
   loadMobileFeatures();
+
+  //Slider Functions
+  function moveDivisor() {
+    //console.log(slider.value);
+    divisor.style.width = `${slider.value}%`;
+  }
+
+  function resetSlider() {
+      slider.value = 50;
+  }
+
+  // Slider Listeners
+  slider.addEventListener("input", moveDivisor);
+  window.addEventListener("load", resetSlider);
+
+  // Menu listeners
+  hamburger.addEventListener("click", toggleMenu);
+  window.addEventListener("resize", hideMenu);
 
   //Event Listeners
   hotspots.forEach(function (hotspot) {

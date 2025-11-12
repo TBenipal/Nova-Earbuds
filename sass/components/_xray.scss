@@ -1,0 +1,174 @@
+@use "../abstracts" as a;
+
+#xray {
+  position: relative;
+  top: 100px;
+  aspect-ratio: 16/10;
+  background-image: url(../images/Nova-Earbuds-Textured.jpg);
+  background-size: cover;
+  border: 5px solid a.$primary-color;
+  border-radius: 15px;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#divisor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 16/10;
+  background-image: url(../images/Nova-Earbuds-Xray-B.jpg);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  border-radius: 15px;
+
+  //& selects the parent container
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 6px;
+    height: 100%;
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  left: -15px;
+  top: 48%;
+  transform: translateY(-50%);
+  width: calc(100% + 20px);
+  height: 20px;
+  //Hides the range track in center of the image horizontally
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+input[type=range]::-moz-range-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+
+//Control the Thumb
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 4vw;
+  height: 4vw;
+  background: a.$primary-color;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: a.$primary-color;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
+
+  #xray {
+    position: relative;
+    top: 100px;
+    aspect-ratio: 16/10;
+    background-image: url(../images/Nova-Earbuds-Textured.jpg);
+    background-size: cover;
+    border: 5px solid a.$primary-color;
+    border-radius: 15px;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  #divisor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/10;
+    background-image: url(../images/Nova-Earbuds-Xray-B.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+
+    //& selects the parent container
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 6px;
+      height: 100%;
+    }
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    left: -15px;
+    top: 48%;
+    transform: translateY(-50%);
+    width: calc(100% + 20px);
+    height: 20px;
+    //Hides the range track in center of the image horizontally
+    background: transparent;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+
+
+  //Control the Thumb
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4vw;
+    height: 4vw;
+    background: a.$primary-color;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      background-color: a.$secondary-color;
+    
+  }
+
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: a.$primary-color;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+}
