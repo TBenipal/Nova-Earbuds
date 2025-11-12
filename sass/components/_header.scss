@@ -1,1 +1,149 @@
-@use '../abstracts';
+@use '../abstracts' as a;
+
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+.hidden {
+    display: none;
+}
+
+#header-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: a.$third-color;
+    box-shadow: 0px 0px 10px 0px a.$third-color;
+    z-index: 1000;
+    padding: 20px 25px;
+}
+
+#mobile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hamburger-menu img {
+    width: 45px;
+    height: auto;
+}
+
+#header-logo img:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+
+nav ul {
+    display: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.hamburger-icon {
+    transition: transform 0.5s ease;
+}
+
+.hamburger-icon:hover {
+    transform: rotate(-90deg);
+}
+
+.hamburger-icon.active {
+  transform: rotate(-90deg);
+}
+
+#side-bar.active {
+    display: block;
+}
+
+#side-bar {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    height: auto;
+    width: 200px;
+    z-index: 999;
+    background-color: a.$third-color;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+#side-bar a {
+    font-size: 4vw;
+    color: a.$primary-color;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 25px;
+    font-family: "Kanit";
+    font-weight: 600;
+    display: block;
+}
+
+#side-bar .nav-item a:hover, #side-bar .nav-item a:active  {
+    transform: scale(1.1);
+    font-weight: 700;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #header-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 50px;
+  }
+
+  #nav-bar {
+    display: flex;
+  }
+
+  nav ul li a {
+    color: a.$primary-color;
+    font-size: 18px;
+    padding: 5px 10px;
+    font-family: "kanit";
+    font-weight: 700;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  nav ul li a:hover, nav ul li a:active {
+    color: a.$third-color;
+    background-color: a.$primary-color;
+  }
+
+  #side-bar, #side-bar.active {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  #header-section {
+    padding: 20px 15vw;
+    align-items: center;
+  }
+  nav ul li a {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+ 
+}
