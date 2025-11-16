@@ -1,1 +1,21 @@
 @use '../abstracts';
+
+#footer {
+    width: 100%;
+    height: auto;
+    margin-top: 25vw;
+}
+
+#footer-content {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 10px;
+}
+
+#footer-logo {
+    margin-bottom: 10px;
+}
