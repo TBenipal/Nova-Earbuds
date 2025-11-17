@@ -3,6 +3,8 @@
   const mobileMenu = document.querySelector("#side-bar");
   const icon = document.querySelector(".hamburger-icon");
   const hotspots = document.querySelectorAll(".Hotspot");
+  const canvas = document.querySelector("#explode-view");
+  const context = canvas.getContext("2d");
   const divisor = document.querySelector("#divisor");
   const slider = document.querySelector("#slider");
   const infoBoxes = [
@@ -33,7 +35,31 @@
     }
   ]
 
+  canvas.width = 1920;
+  canvas.height = 1080;
+
+  const frameCount = 321;
+  const images = [];
+  const buds = {
+      frame: 0
+  }
+
   //GSAP - Animation
+
+  //GSAP Animation for scroll effect
+      gsap.to(buds, {
+        //frame: images-1,
+        frame: 320,
+        snap: "frame",
+        scrollTrigger: {
+            trigger: "#scroll-animation", 
+            pin: true,
+            scrub: 5,
+            start: "top top",
+            end: "+=3000",
+        },
+        onUpdate: render
+    })
   
   // GSAP Animation for each feature box
   function showFeature() {
@@ -216,6 +242,23 @@
 
   loadMobileFeatures();
 
+  // Run a for loop to populate images array
+  for (let i=0; i<frameCount; i++) {
+    const img = new Image();
+    // Adds variable ${i+1}.toString() for increment images to create animation the .toString() converts that variable to a string
+    img.src = `images/Explode_${(i+1).toString()}.webp`;
+    images.push(img);
+  }
+  console.log(images);
+
+  
+  function render() {
+    // console.log(buds.frame);
+    // console.log(images[buds.frame]);
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[buds.frame], 0, 0);
+  }
+
   //Slider Functions
   function moveDivisor() {
     //console.log(slider.value);
@@ -226,6 +269,8 @@
       slider.value = 50;
   }
 
+  //Event Listeners
+
   // Slider Listeners
   slider.addEventListener("input", moveDivisor);
   window.addEventListener("load", resetSlider);
@@ -234,10 +279,13 @@
   hamburger.addEventListener("click", toggleMenu);
   window.addEventListener("resize", hideMenu);
 
-  //Event Listeners
+  //Model Listeners
   hotspots.forEach(function (hotspot) {
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
-  
+
+  //Scroll Listeners
+  images[0].addEventListener("load", render);
+
 })();

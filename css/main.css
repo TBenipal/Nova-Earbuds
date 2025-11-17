@@ -154,6 +154,7 @@ nav ul {
   #header-section {
     padding: 20px 15vw;
     align-items: center;
+    justify-content: space-between;
   }
   nav ul li a {
     font-size: 20px;
@@ -391,6 +392,26 @@ model-viewer {
     background-color: #ff9100;
   }
 }
+#scroll-animation {
+  width: 100%;
+}
+
+#scroll {
+  margin: 0 auto;
+}
+
+#explode-view {
+  width: 100%;
+  border: 5px solid #ff9100;
+  margin-top: 200px;
+}
+
+@media screen and (min-width: 1200px) {
+  #explode-view {
+    max-width: 1200px;
+    border: 7px solid #ff9100;
+  }
+}
 #xray {
   position: relative;
   top: 100px;
@@ -504,7 +525,7 @@ input[type=range]::-moz-range-thumb {
     -moz-appearance: none;
     appearance: none;
     position: absolute;
-    left: -15px;
+    left: -10px;
     top: 48%;
     transform: translateY(-50%);
     width: calc(100% + 20px);
@@ -524,8 +545,8 @@ input[type=range]::-moz-range-thumb {
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 4vw;
-    height: 4vw;
+    width: 3.5vw;
+    height: 3.5vw;
     background: #ff9100;
     border-radius: 50%;
     border: none;
