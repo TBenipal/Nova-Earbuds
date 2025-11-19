@@ -93,17 +93,13 @@ ul, li {
     width: 100%;                
 }
 
-#sidebar .nav-item a:hover, #sidebar .nav-item a:active  {
+#sidebar ul .nav-item a:hover, #sidebar ul .nav-item a:active  {
     transform: scale(1.1);
     font-weight: 700;
 }
 
   @media screen and (min-width: 768px) {
     #hamburger {
-      display: none;
-    }
-
-    #sidebar.active {
       display: none;
     }
 
@@ -120,6 +116,11 @@ ul, li {
       padding: 0px;
     }
 
+    #sidebar ul {
+      display: flex;
+      flex-direction: row;
+    }
+
     #sidebar a {
       font-size: 22px;
       color: a.$primary-color;
@@ -127,11 +128,10 @@ ul, li {
       padding: 5px 15px;
       font-family: "Kanit";
       font-weight: 600;
-      display: inline-block; 
       width: 100%;                
   }
 
-  #sidebar .nav-item a:hover, #sidebar .nav-item a:active  {
+  #sidebar ul .nav-item a:hover, #sidebar ul .nav-item a:active  {
     background-color: a.$primary-color;
     color: a.$third-color;
     border-radius: 5px;
@@ -144,11 +144,10 @@ ul, li {
     padding: 0px 13vw;
   }
 
-  #sidebar a {
+  #sidebar ul li a {
     font-size: 24px;
     color: a.$primary-color;
     text-decoration: none;
-    padding: 5px 20px;
     font-family: "Kanit";
     font-weight: 600;
     width: 100%;                

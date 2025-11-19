@@ -117,16 +117,13 @@ ul, li {
   width: 100%;
 }
 
-#sidebar .nav-item a:hover, #sidebar .nav-item a:active {
+#sidebar ul .nav-item a:hover, #sidebar ul .nav-item a:active {
   transform: scale(1.1);
   font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
   #hamburger {
-    display: none;
-  }
-  #sidebar.active {
     display: none;
   }
   #menu {
@@ -140,6 +137,10 @@ ul, li {
     display: flex;
     padding: 0px;
   }
+  #sidebar ul {
+    display: flex;
+    flex-direction: row;
+  }
   #sidebar a {
     font-size: 22px;
     color: #ff9100;
@@ -147,10 +148,9 @@ ul, li {
     padding: 5px 15px;
     font-family: "Kanit";
     font-weight: 600;
-    display: inline-block;
     width: 100%;
   }
-  #sidebar .nav-item a:hover, #sidebar .nav-item a:active {
+  #sidebar ul .nav-item a:hover, #sidebar ul .nav-item a:active {
     background-color: #ff9100;
     color: black;
     border-radius: 5px;
@@ -161,11 +161,10 @@ ul, li {
   #menu {
     padding: 0px 13vw;
   }
-  #sidebar a {
+  #sidebar ul li a {
     font-size: 24px;
     color: #ff9100;
     text-decoration: none;
-    padding: 5px 20px;
     font-family: "Kanit";
     font-weight: 600;
     width: 100%;
