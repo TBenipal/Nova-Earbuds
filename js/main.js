@@ -1,7 +1,7 @@
 (() => {
-  const hamburger = document.querySelector("#hamburger-menu");
-  const mobileMenu = document.querySelector("#side-bar");
-  const icon = document.querySelector(".hamburger-icon");
+  const menu = document.querySelector("#sidebar");
+  const hamburger = document.querySelector("#hamburger");
+  const menuLinks = document.querySelectorAll("#sidebar ul li a");
   const hotspots = document.querySelectorAll(".Hotspot");
   const canvas = document.querySelector("#explode-view");
   const context = canvas.getContext("2d");
@@ -46,20 +46,37 @@
 
   //GSAP - Animation
 
+  //GSAP Animation for header
+  const hlogo = document.querySelector("#header-logo");
+  gsap.from(hlogo, {
+    duration: 1,
+    x: -200,
+    ease: "ease-in"
+  })
+
+  gsap.from(hamburger, {
+    duration: 1,
+    x: 200,
+    ease: "ease-in"
+  })
+
+
+
+
   //GSAP Animation for scroll effect
-      gsap.to(buds, {
-        //frame: images-1,
-        frame: 320,
-        snap: "frame",
-        scrollTrigger: {
-            trigger: "#scroll-animation", 
-            pin: true,
-            scrub: 5,
-            start: "top top",
-            end: "+=3000",
-        },
-        onUpdate: render
-    })
+  gsap.to(buds, {
+    //frame: images-1,
+    frame: 320,
+    snap: "frame",
+    scrollTrigger: {
+        trigger: "#scroll-animation", 
+        pin: true,
+        scrub: 2,
+        start: "top top",
+        end: "+=3000",
+    },
+    onUpdate: render
+  })
   
   // GSAP Animation for each feature box
   function showFeature() {
@@ -115,13 +132,7 @@
 
   // Menu
   function toggleMenu() {
-    mobileMenu.classList.toggle("active");
-    icon.classList.toggle("active");
-  }
-
-  function hideMenu() {
-    mobileMenu.classList.remove("active");
-    icon.classList.remove("active");
+      menu.classList.toggle("active");
   }
 
   //Array Functions Desktop
@@ -251,10 +262,11 @@
   }
   console.log(images);
 
+  images[0].addEventListener("load", render);
   
   function render() {
-    // console.log(buds.frame);
-    // console.log(images[buds.frame]);
+    console.log(buds.frame);
+    console.log(images[buds.frame]);
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[buds.frame], 0, 0);
   }
@@ -275,15 +287,17 @@
   slider.addEventListener("input", moveDivisor);
   window.addEventListener("load", resetSlider);
 
-  // Menu listeners
-  hamburger.addEventListener("click", toggleMenu);
-  window.addEventListener("resize", hideMenu);
-
   //Model Listeners
   hotspots.forEach(function (hotspot) {
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
+
+  //Menu Listeners
+  hamburger.addEventListener("click", toggleMenu);
+  menuLinks.forEach(link=>{
+    link.addEventListener("click", toggleMenu);
+  })
 
   //Scroll Listeners
   images[0].addEventListener("load", render);
