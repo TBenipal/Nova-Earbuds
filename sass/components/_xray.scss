@@ -1,8 +1,11 @@
 @use "../abstracts" as a;
 
+#nova-slider {
+  margin: 50px 0px;
+}
+
 #xray {
   position: relative;
-  top: 100px;
   aspect-ratio: 16/10;
   background-image: url(../images/Nova-Earbuds-Textured.jpg);
   background-size: cover;
@@ -39,7 +42,7 @@ input[type=range] {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
-  left: -15px;
+  left: -10px;
   top: 48%;
   transform: translateY(-50%);
   width: calc(100% + 20px);

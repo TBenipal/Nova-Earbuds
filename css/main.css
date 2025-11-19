@@ -36,6 +36,11 @@ p {
   display: none;
 }
 
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 #header-section {
   position: fixed;
   top: 0;
@@ -53,7 +58,7 @@ p {
   justify-content: space-between;
 }
 
-#hamburger-menu img {
+#hamburger img {
   width: 45px;
   height: auto;
 }
@@ -63,107 +68,111 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
-nav ul {
-  display: none;
-}
-
-#hamburger-menu {
+#hamburger {
   cursor: pointer;
   background-color: transparent;
   border: none;
 }
 
-.hamburger-icon {
+#hamburger-icon {
   transition: transform 0.5s ease;
 }
 
-.hamburger-icon:hover {
+#hamburger-icon:hover {
   transform: rotate(-90deg);
 }
 
-.hamburger-icon.active {
+#hamburger-icon.active {
   transform: rotate(-90deg);
 }
 
-#side-bar.active {
-  display: block;
-}
-
-#side-bar {
+#sidebar {
   position: fixed;
-  top: 70px;
+  display: none;
+  top: 75px;
   right: 0;
   height: auto;
-  width: 200px;
+  width: auto;
   z-index: 999;
   background-color: black;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  padding: 20px 10px;
+  padding: 20px;
+  z-index: 999;
 }
 
-#side-bar a {
+#sidebar.active {
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar a {
   font-size: 4vw;
   color: #ff9100;
   text-decoration: none;
   padding: 10px;
-  padding-left: 25px;
+  padding-right: 40px;
   font-family: "Kanit";
   font-weight: 600;
-  display: block;
+  display: inline-block;
+  width: 100%;
 }
 
-#side-bar .nav-item a:hover, #side-bar .nav-item a:active {
+#sidebar .nav-item a:hover, #sidebar .nav-item a:active {
   transform: scale(1.1);
   font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
-  #hamburger-menu {
+  #hamburger {
     display: none;
   }
-  #header-section {
+  #sidebar.active {
+    display: none;
+  }
+  #menu {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
-  nav ul {
-    display: block;
+  #sidebar {
+    position: static;
+    display: flex;
+    padding: 0px;
   }
-  nav ul li {
-    display: inline-block;
-  }
-  nav ul li a {
+  #sidebar a {
+    font-size: 22px;
     color: #ff9100;
-    font-size: 18px;
-    padding: 5px 10px;
-    font-family: "kanit";
-    font-weight: 700;
-    border-radius: 3px;
-    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-family: "Kanit";
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
   }
-  nav ul li a:hover, nav ul li a:active {
-    color: black;
+  #sidebar .nav-item a:hover, #sidebar .nav-item a:active {
     background-color: #ff9100;
-  }
-  #side-bar, #side-bar.active {
-    display: none;
+    color: black;
+    border-radius: 5px;
+    transform: scale(1);
   }
 }
 @media screen and (min-width: 1200px) {
-  #header-section {
-    padding: 20px 15vw;
-    align-items: center;
-    justify-content: space-between;
+  #menu {
+    padding: 0px 13vw;
   }
-  nav ul li a {
-    font-size: 20px;
-    margin-left: 5px;
+  #sidebar a {
+    font-size: 24px;
+    color: #ff9100;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Kanit";
+    font-weight: 600;
+    width: 100%;
   }
 }
-body {
+body, html {
   overflow-x: hidden;
-  background-color: white;
 }
 
 model-viewer {
@@ -412,9 +421,12 @@ model-viewer {
     border: 7px solid #ff9100;
   }
 }
+#nova-slider {
+  margin: 50px 0px;
+}
+
 #xray {
   position: relative;
-  top: 100px;
   aspect-ratio: 16/10;
   background-image: url(../images/Nova-Earbuds-Textured.jpg);
   background-size: cover;
@@ -449,7 +461,7 @@ input[type=range] {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
-  left: -15px;
+  left: -10px;
   top: 48%;
   transform: translateY(-50%);
   width: calc(100% + 20px);
@@ -567,7 +579,7 @@ input[type=range]::-moz-range-thumb {
 #footer {
   width: 100%;
   height: auto;
-  margin-top: 25vw;
+  margin-top: 25px;
 }
 
 #footer-content {
@@ -582,8 +594,4 @@ input[type=range]::-moz-range-thumb {
 
 #footer-logo {
   margin-bottom: 10px;
-}
-
-#about-us {
-  margin-bottom: 40px;
 }/*# sourceMappingURL=main.css.map */

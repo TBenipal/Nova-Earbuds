@@ -12,6 +12,11 @@
     display: none;
 }
 
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
 #header-section {
     position: fixed;
     top: 0;
@@ -29,7 +34,7 @@
   justify-content: space-between;
 }
 
-#hamburger-menu img {
+#hamburger img {
     width: 45px;
     height: auto;
 }
@@ -39,114 +44,113 @@
     transition: all .2s ease-in-out;
 }
 
-nav ul {
-    display: none;
-}
-
-#hamburger-menu {
+#hamburger {
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 
-.hamburger-icon {
+#hamburger-icon {
     transition: transform 0.5s ease;
 }
 
-.hamburger-icon:hover {
+#hamburger-icon:hover {
     transform: rotate(-90deg);
 }
 
-.hamburger-icon.active {
+#hamburger-icon.active {
   transform: rotate(-90deg);
 }
-
-#side-bar.active {
-    display: block;
+  
+#sidebar {
+  position: fixed;
+  display: none;
+  top: 75px;
+  right: 0;
+  height: auto;
+  width: auto;  
+  z-index: 999;
+  background-color: a.$third-color;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 999;
+}
+  
+#sidebar.active {
+  display: flex;
+  flex-direction: column;
 }
 
-#side-bar {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    height: auto;
-    width: 200px;
-    z-index: 999;
-    background-color: a.$third-color;
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    padding: 20px 10px;
-}
-
-#side-bar a {
+#sidebar a {
     font-size: 4vw;
     color: a.$primary-color;
     text-decoration: none;
     padding: 10px;
-    padding-left: 25px;
+    padding-right: 40px;
     font-family: "Kanit";
     font-weight: 600;
-    display: block;
+    display: inline-block; 
+    width: 100%;                
 }
 
-#side-bar .nav-item a:hover, #side-bar .nav-item a:active  {
+#sidebar .nav-item a:hover, #sidebar .nav-item a:active  {
     transform: scale(1.1);
     font-weight: 700;
 }
 
+  @media screen and (min-width: 768px) {
+    #hamburger {
+      display: none;
+    }
 
+    #sidebar.active {
+      display: none;
+    }
 
-@media screen and (min-width: 768px) {
+    #menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  #hamburger-menu {
-    display: none;
+    #sidebar {
+      position: static;
+      display: flex;
+      padding: 0px;
+    }
+
+    #sidebar a {
+      font-size: 22px;
+      color: a.$primary-color;
+      text-decoration: none;
+      padding: 5px 15px;
+      font-family: "Kanit";
+      font-weight: 600;
+      display: inline-block; 
+      width: 100%;                
   }
 
-  #header-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  nav ul {
-    display: block;
-  }
-
-
-  nav ul li {
-    display: inline-block;
-  }
-
-  nav ul li a {
-    color: a.$primary-color;
-    font-size: 18px;
-    padding: 5px 10px;
-    font-family: "kanit";
-    font-weight: 700;
-    border-radius: 3px;
-    text-transform: uppercase;
-  }
-
-  nav ul li a:hover, nav ul li a:active {
-    color: a.$third-color;
+  #sidebar .nav-item a:hover, #sidebar .nav-item a:active  {
     background-color: a.$primary-color;
-  }
-
-  #side-bar, #side-bar.active {
-    display: none;
-  }
+    color: a.$third-color;
+    border-radius: 5px;
+    transform: scale(1);
+}
 }
 
 @media screen and (min-width: 1200px) {
+  #menu {
+    padding: 0px 13vw;
+  }
 
-  #header-section {
-    padding: 20px 15vw;
-    align-items: center;
-    justify-content: space-between;
+  #sidebar a {
+    font-size: 24px;
+    color: a.$primary-color;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Kanit";
+    font-weight: 600;
+    width: 100%;                
   }
-  nav ul li a {
-    font-size: 20px;
-    margin-left: 5px;
-  }
- 
 }
