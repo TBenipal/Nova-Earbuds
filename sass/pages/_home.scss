@@ -1,0 +1,226 @@
+@use '../abstracts' as a;
+
+#hero-img #tablet-img, #hero-img #desktop-img {
+    display: none;
+}
+
+#hero {
+    position: relative; 
+    width: 100%;
+    height: auto;
+    padding-top: 125px;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+#hero-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#hero-img #mobile-img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+#hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero-text p {
+    color: a.$primary-color;
+    font-size: 5vw;
+    font-weight: 600;
+    text-align: center;
+    line-height: 0px;
+}
+
+#hero-text h3 {
+    font-size: 7vw;
+    color: white;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+    font-size: 5vw;
+    font-weight: 800;
+    padding: 10px 25px;
+    background-color: a.$primary-color;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: black;
+    color: a.$primary-color;
+    font-weight: 800;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.50);
+    z-index: 1;
+}
+
+#hero-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; 
+}
+
+@media screen and (min-width: 768px) {
+
+    #hero-img #mobile-img {
+        display: none;
+    }
+
+    #hero {
+        padding-top: 125px;
+        padding-bottom: 25px;
+        margin-bottom: 3vw;
+        padding-right: 5vw;
+        padding-left: 4vw;
+        
+    }
+
+    #hero-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        text-align: start;
+    }
+
+    #hero-img {
+        order: 2;
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    #hero-img #tablet-img {
+        display: block;
+        width: 95%;
+        height: auto;
+    }
+
+    #hero-text {
+        order: 1;
+        flex: 1;
+        align-items: start;
+        margin-bottom: 5vw;
+    }
+
+    #hero-text p {
+        color: a.$primary-color;
+        font-size: 3vw;
+        font-weight: 600;
+        text-align: left;
+        line-height: 10px;
+    }
+
+    #hero-text h3 {
+        font-size: 5.4vw;
+        color: white;
+        text-align: left;
+    }
+
+    .btn {
+        margin-top: 25px;
+        font-size: 3.5vw;
+        font-weight: 800;
+        padding: 10px 25px;
+        background-color: a.$primary-color;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: a.$primary-color;
+        font-weight: 800;
+    }
+
+    #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.50);
+        z-index: 1;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    #hero-img #mobile-img, #hero-img #tablet-img {
+        display: none;
+    }
+
+    #hero-img #desktop-img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #hero {
+        padding-top: 125px;
+        padding-bottom: 25px;
+        padding-right: 10vw;
+        padding-left: 10vw;
+        
+    }
+
+    #hero-text {
+        order: 1;
+        flex: 1;
+        align-items: start;
+        margin-bottom: 5vw;
+    }
+
+    #hero-text p {
+        color: a.$primary-color;
+        font-size: 2.5vw;
+        font-weight: 600;
+        text-align: left;
+        line-height: 10px;
+    }
+
+    #hero-text h3 {
+        font-size: 4.1vw;
+        color: white;
+        text-align: left;
+    }
+
+    .btn {
+        margin-top: 25px;
+        font-size: 2.5vw;
+        font-weight: 800;
+        padding: 10px 25px;
+        background-color: a.$primary-color;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+}

@@ -47,18 +47,41 @@
   //GSAP - Animation
 
   //GSAP Animation for header
-  const hlogo = document.querySelector("#header-logo");
-  gsap.from(hlogo, {
-    duration: 1,
-    x: -200,
-    ease: "ease-in"
-  })
 
-  gsap.from(hamburger, {
-    duration: 1,
-    x: 200,
-    ease: "ease-in"
-  })
+  function showHeader() {
+    const hlogo = document.querySelector("#header-logo");
+    const screen = window.innerWidth;
+    
+    if(screen < 768) {
+      gsap.from(hlogo, {
+        duration: 1,
+        x: -200,
+        ease: "ease-in"
+      })
+
+      gsap.from(hamburger, {
+        duration: 1,
+        x: 200,
+        ease: "ease-in"
+      })
+    }
+
+    else if(screen >= 768) {
+      gsap.from(hlogo, {
+        duration:  1,
+        x: -400,
+        ease: "ease-in"
+      })
+
+      gsap.from(menu, {
+        duration: 1,
+        x: 800,
+        ease: "ease-in"
+      })
+    }
+  }
+
+  showHeader();
 
 
 
@@ -69,65 +92,223 @@
     frame: 320,
     snap: "frame",
     scrollTrigger: {
-        trigger: "#scroll-animation", 
+        trigger: "#explode-view", 
         pin: true,
-        scrub: 2,
-        start: "top top",
-        end: "+=3000",
+        scrub: 5,
+        start: "top 20%",
+        end: "bottom bottom"
     },
     onUpdate: render
   })
   
   // GSAP Animation for each feature box
-  function showFeature() {
-    let feature = document.querySelector(`#${this.slot}`);
+  function showFeature(feature) {
     const screen = window.innerWidth;
 
-    if (screen < 720) {
-        if (this.slot === "feature-1") {
-          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-2") {
-          gsap.fromTo(feature, { x: -150, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-3") {
-          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-4") {
-          gsap.fromTo(feature, { x: -250, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-5") {
-          gsap.fromTo(feature, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        }
+    if (screen < 768) {
+
+      if (feature.id == "feature-1") {
+        gsap.fromTo(feature, 
+          { 
+            x: 100, 
+            opacity: 0 
+          }, 
+
+          { 
+            x: 0, 
+            opacity: 1, 
+            duration: 1,
+            scrollTrigger: {
+              trigger: feature,
+              start: "top 80%",
+              toggleActions: "play reverse play reverse"
+            }
+          }
+        );
       } 
 
-      else if (screen >= 720) {
-        if (this.slot === "feature-1") {
-          gsap.fromTo(feature, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
-        } 
-        else if (this.slot === "feature-2") {
-          gsap.fromTo(feature, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: .5 });
-        } 
-        else if (this.slot === "feature-3") {
-          gsap.fromTo(feature, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-4") {
-          gsap.fromTo(feature, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-        } 
-        else if (this.slot === "feature-5") {
-          gsap.fromTo(feature, {opacity: 0 }, {opacity: 1, duration: 1.5 });
+    else if (feature.id == "feature-2") {
+      gsap.fromTo(feature, 
+        { 
+          x: -150, 
+          opacity: 0 
+        },
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
         }
-      } 
+      );
+    } 
+    
+    else if (feature.id == "feature-3") {
+      gsap.fromTo(feature, 
+        { 
+          x: 200, 
+          opacity: 0 
+        },
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-4") {
+      gsap.fromTo(feature, 
+        { 
+          x: -250, 
+          opacity: 0 
+        }, 
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-5") {
+      gsap.fromTo(feature, 
+        { 
+          x: 300, 
+          opacity: 0 
+        },
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    }
+  } 
+  
+  else if (screen >= 768) {
+
+    if (feature.id == "feature-1") {
+      gsap.fromTo(feature, 
+        { 
+          x: -200, 
+          opacity: 0 
+        }, 
+
+        { x: 0, 
+          opacity: 1, 
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-2") {
+      gsap.fromTo(feature, 
+        { 
+          x: 200, 
+          opacity: 0 
+        }, 
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-3") {
+      gsap.fromTo(feature, 
+        { 
+          x: -100, 
+          opacity: 0 
+        }, 
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-4") {
+      gsap.fromTo(feature, 
+        { 
+          x: 100, 
+          opacity: 0 
+        }, 
+
+        { 
+          x: 0, 
+          opacity: 1, 
+          duration: 1,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+
+    else if (feature.id == "feature-5") {
+      gsap.fromTo(feature, 
+        { 
+          opacity: 0 
+        },
+
+        { 
+          opacity: 1, 
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: feature,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    }
+
   }
-
-  window.addEventListener("load", () => {
-    showFeature.call({ slot: "feature-1" });
-    showFeature.call({ slot: "feature-2" });
-    showFeature.call({ slot: "feature-3" });
-    showFeature.call({ slot: "feature-4" });
-    showFeature.call({ slot: "feature-5" });
-  });
-
+}
   //Functions
 
   // Menu
@@ -247,6 +428,8 @@
 
       //Append the featurebox with the main div 
       mobileContainer.appendChild(featurebox);
+
+      showFeature(featurebox);
 
     });
   }

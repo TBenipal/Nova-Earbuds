@@ -1,17 +1,20 @@
 @use '../abstracts' as a;
 
  #scroll-animation {
+  position: relative;
   width: 100%;
  }
 
  #scroll {
+  padding-top: 50px;
   margin: 0 auto;
  }
  
  #explode-view {
   width: 100%;
-  border: 5px solid a.$primary-color ;
-  margin-top: 200px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -21,7 +24,7 @@
 @media screen and (min-width: 1200px) {
 
   #explode-view {
-    max-width: 1200px;
+    max-width: 1400px;
     border: 7px solid a.$primary-color ;
   }
  

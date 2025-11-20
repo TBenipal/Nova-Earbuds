@@ -172,6 +172,7 @@ ul, li {
 }
 body, html {
   overflow-x: hidden;
+  background-color: black;
 }
 
 model-viewer {
@@ -183,7 +184,6 @@ model-viewer {
 
 #model {
   position: relative;
-  top: 100px;
   max-width: 1200px;
   margin: 0px auto;
 }
@@ -238,10 +238,10 @@ model-viewer {
   margin: 0px;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
   model-viewer {
     position: relative;
-    width: auto;
+    width: 100%;
     height: 600px;
     background-color: orange;
     margin: 0 auto;
@@ -270,10 +270,15 @@ model-viewer {
   model-viewer {
     position: relative;
     width: auto;
-    max-width: 100%;
-    height: 700px;
+    max-width: 1400px;
+    height: 800px;
     background-color: orange;
     margin: 0 auto;
+  }
+  #model {
+    position: relative;
+    max-width: 1920px;
+    margin: 0px auto;
   }
   .mobile-features {
     display: none;
@@ -401,27 +406,31 @@ model-viewer {
   }
 }
 #scroll-animation {
+  position: relative;
   width: 100%;
 }
 
 #scroll {
+  padding-top: 50px;
   margin: 0 auto;
 }
 
 #explode-view {
   width: 100%;
-  border: 5px solid #ff9100;
-  margin-top: 200px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media screen and (min-width: 1200px) {
   #explode-view {
-    max-width: 1200px;
+    max-width: 1400px;
     border: 7px solid #ff9100;
   }
 }
 #nova-slider {
   margin: 50px 0px;
+  padding: 0px 1vw;
 }
 
 #xray {
@@ -500,16 +509,97 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
+  #nova-slider {
+    margin: 50px 0px;
+    padding: 0px 3vw;
+  }
   #xray {
     position: relative;
-    top: 100px;
     aspect-ratio: 16/10;
     background-image: url(../images/Nova-Earbuds-Textured.jpg);
     background-size: cover;
     border: 5px solid #ff9100;
     border-radius: 15px;
     max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+  }
+  #divisor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/10;
+    background-image: url(../images/Nova-Earbuds-Xray-B.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  #divisor::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 6px;
+    height: 100%;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    left: -10px;
+    top: 48%;
+    transform: translateY(-50%);
+    width: calc(100% + 20px);
+    height: 20px;
+    background: transparent;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  input[type=range]::-moz-range-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3.5vw;
+    height: 3.5vw;
+    background: #ff9100;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb:hover {
+    background-color: white;
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff9100;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #nova-slider {
+    margin: 50px 0px;
+    padding: 0px 0vw;
+  }
+  #xray {
+    position: relative;
+    aspect-ratio: 16/10;
+    background-image: url(../images/Nova-Earbuds-Textured.jpg);
+    background-size: cover;
+    border: 5px solid #ff9100;
+    border-radius: 15px;
+    max-width: 1300px;
     height: auto;
     margin: 0 auto;
   }
@@ -593,4 +683,206 @@ input[type=range]::-moz-range-thumb {
 
 #footer-logo {
   margin-bottom: 10px;
+}
+
+#hero-img #tablet-img, #hero-img #desktop-img {
+  display: none;
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 125px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+#hero-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#hero-img #mobile-img {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+#hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hero-text p {
+  color: #ff9100;
+  font-size: 5vw;
+  font-weight: 600;
+  text-align: center;
+  line-height: 0px;
+}
+
+#hero-text h3 {
+  font-size: 7vw;
+  color: white;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+  font-size: 5vw;
+  font-weight: 800;
+  padding: 10px 25px;
+  background-color: #ff9100;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: black;
+  color: #ff9100;
+  font-weight: 800;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#hero-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  #hero-img #mobile-img {
+    display: none;
+  }
+  #hero {
+    padding-top: 125px;
+    padding-bottom: 25px;
+    margin-bottom: 3vw;
+    padding-right: 5vw;
+    padding-left: 4vw;
+  }
+  #hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    text-align: start;
+  }
+  #hero-img {
+    order: 2;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  #hero-img #tablet-img {
+    display: block;
+    width: 95%;
+    height: auto;
+  }
+  #hero-text {
+    order: 1;
+    flex: 1;
+    align-items: start;
+    margin-bottom: 5vw;
+  }
+  #hero-text p {
+    color: #ff9100;
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: left;
+    line-height: 10px;
+  }
+  #hero-text h3 {
+    font-size: 5.4vw;
+    color: white;
+    text-align: left;
+  }
+  .btn {
+    margin-top: 25px;
+    font-size: 3.5vw;
+    font-weight: 800;
+    padding: 10px 25px;
+    background-color: #ff9100;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: black;
+    color: #ff9100;
+    font-weight: 800;
+  }
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #hero-img #mobile-img, #hero-img #tablet-img {
+    display: none;
+  }
+  #hero-img #desktop-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #hero {
+    padding-top: 125px;
+    padding-bottom: 25px;
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+  #hero-text {
+    order: 1;
+    flex: 1;
+    align-items: start;
+    margin-bottom: 5vw;
+  }
+  #hero-text p {
+    color: #ff9100;
+    font-size: 2.5vw;
+    font-weight: 600;
+    text-align: left;
+    line-height: 10px;
+  }
+  #hero-text h3 {
+    font-size: 4.1vw;
+    color: white;
+    text-align: left;
+  }
+  .btn {
+    margin-top: 25px;
+    font-size: 2.5vw;
+    font-weight: 800;
+    padding: 10px 25px;
+    background-color: #ff9100;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=main.css.map */
