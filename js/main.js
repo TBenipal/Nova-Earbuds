@@ -210,21 +210,210 @@
 
   showHero();
 
+  //GSAP Animation for Benefits Section
 
-  //GSAP Animation for scroll effect
-  gsap.to(buds, {
-    //frame: images-1,
-    frame: 320,
-    snap: "frame",
-    scrollTrigger: {
-        trigger: "#explode-view", 
-        pin: true,
-        scrub: 5,
-        start: "top 20%",
-        end: "bottom bottom"
-    },
-    onUpdate: render
-  })
+    function showBenefits() {
+      const benefit1 = document.querySelector("#benefit-1");
+      const benefit2 = document.querySelector("#benefit-2");
+      const benefit3 = document.querySelector("#benefit-3");
+      const benefit4 = document.querySelector("#benefit-4");
+      const screen = window.innerWidth;
+
+      if(screen < 768) {
+        gsap.from(benefit1, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit1,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit2, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit2,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit3, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit3,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit4, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit4,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+      }
+
+      else if(screen >= 768 && screen < 1200) {
+        gsap.from(benefit1, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit1,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit2, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit2,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit3, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit3,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit4, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit4,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+      }
+
+      else if(screen >= 1200) {
+        gsap.from(benefit1, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit1,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit2, {
+          x: 1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit2,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit3, {
+          x: -1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit3,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+
+        gsap.from(benefit4, {
+          x: 1920,
+          duration: 1,
+          ease: "ease-in",
+          scrollTrigger: {
+            trigger: benefit4,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        })
+      }
+    }
+    showBenefits();
+
+
+  //GSAP Animation for Scroll Effect
+
+  function showBuds() {
+    const screen = window.innerWidth;
+    if(screen < 768) {
+      gsap.to(buds, {
+        frame: 320,
+        snap: "frame",
+        scrollTrigger: {
+            trigger: "#explode-view", 
+            pin: true,
+            scrub: 40,
+            start: "top 50%",
+            end: "bottom 80%",
+            toggleActions: "play reverse play reverse"
+        },
+        onUpdate: render
+      })
+    }
+
+    else if(screen > 768 && screen < 1200) {
+      gsap.to(buds, {
+        frame: 320,
+        snap: "frame",
+        scrollTrigger: {
+            trigger: "#explode-view", 
+            pin: true,
+            scrub: 40,
+            start: "top 40%",
+            end: "bottom 90%",
+            toggleActions: "play reverse play reverse"
+        },
+        onUpdate: render
+      })
+    }
+
+    else if(screen > 1200) {
+      gsap.to(buds, {
+        frame: 320,
+        snap: "frame",
+        scrollTrigger: {
+            trigger: "#explode-view", 
+            pin: true,
+            scrub: 25,
+            start: "top 13%",
+            end: "bottom bottom",
+            toggleActions: "play reverse play reverse"
+        },
+        onUpdate: render
+      })
+    }
+  }
+
+  showBuds();
   
   // GSAP Animation for each feature box
   function showFeature(feature) {
@@ -347,7 +536,7 @@
           duration: 0.5,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -367,7 +556,7 @@
           duration: 0.5,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -387,7 +576,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -407,7 +596,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -425,7 +614,7 @@
           duration: 1.5,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }

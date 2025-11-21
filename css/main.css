@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "cantarellregular";
-  src: url("../fonts/cantarell_regular-webfont.woff2") format("woff2"), url("../fonts/cantarell_regular-webfont.woff") format("woff");
+  font-family: "CubaoRegular";
+  src: url("../fonts/Cubao_Free_Regular.otf") format("otf");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,6 @@ h1, h2, h3 {
 
 h2 {
   font-size: 36px;
-  color: black;
   margin-top: 10px;
   margin-bottom: 20px;
   letter-spacing: -2px;
@@ -279,6 +278,7 @@ model-viewer {
     position: relative;
     max-width: 1920px;
     margin: 0px auto;
+    padding: 0px 5vw;
   }
   .mobile-features {
     display: none;
@@ -425,7 +425,6 @@ model-viewer {
 @media screen and (min-width: 1200px) {
   #explode-view {
     max-width: 1400px;
-    border: 7px solid #ff9100;
   }
 }
 #nova-slider {
@@ -589,7 +588,7 @@ input[type=range]::-moz-range-thumb {
 }
 @media screen and (min-width: 1200px) {
   #nova-slider {
-    margin: 50px 0px;
+    margin: 75px 8vw;
     padding: 0px 0vw;
   }
   #xray {
@@ -668,7 +667,7 @@ input[type=range]::-moz-range-thumb {
 #footer {
   width: 100%;
   height: auto;
-  margin-top: 25px;
+  margin-top: 100px;
 }
 
 #footer-content {
@@ -683,6 +682,10 @@ input[type=range]::-moz-range-thumb {
 
 #footer-logo {
   margin-bottom: 10px;
+}
+
+body, html {
+  scroll-behavior: smooth;
 }
 
 #hero-img #tablet-img, #hero-img #desktop-img {
@@ -790,6 +793,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .benefit-card {
+  position: relative;
   width: 100%;
   height: auto;
   border: 5px solid #ff9100;
@@ -808,6 +812,7 @@ input[type=range]::-moz-range-thumb {
   text-align: center;
   font-size: 6vw;
   font-weight: 800;
+  margin-top: 25px;
 }
 
 .benefit-text {
@@ -816,7 +821,7 @@ input[type=range]::-moz-range-thumb {
   font-size: 4vw;
   line-height: normal;
   font-weight: 600;
-  padding: 0px 50px;
+  padding: 25px 50px;
 }
 
 #product-section {
@@ -959,9 +964,10 @@ input[type=range]::-moz-range-thumb {
     margin-top: 25px;
     width: 100%;
     height: auto;
-    padding: 0px 0vw;
+    padding: 0px 4vw;
   }
   .benefit-card {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -971,22 +977,29 @@ input[type=range]::-moz-range-thumb {
     border: 5px solid #ff9100;
     border-radius: 5vw;
     margin-top: 5vw;
+    padding: 0px 0vw;
   }
   .benefit-card img {
     width: 50%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
     border-top-left-radius: 4.5vw;
-    border-top-right-radius: 0px;
     border-bottom-left-radius: 4.5vw;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .benefit-content {
-    padding: 0px 5vw;
+    padding: 0px 0vw;
   }
   .benefit-header {
     color: #ff9100;
     text-align: start;
     font-size: 3vw;
     font-weight: 800;
-    padding: 10px 0px;
+    padding: 10px 4vw;
+    margin-top: 0px;
   }
   .benefit-text {
     color: white;
@@ -994,7 +1007,7 @@ input[type=range]::-moz-range-thumb {
     font-size: 2vw;
     line-height: normal;
     font-weight: 600;
-    padding: 0px;
+    padding: 0px 4vw;
   }
   #benefit-2 p, #benefit-2 h3, #benefit-4 h3, #benefit-4 p {
     order: 1;
@@ -1117,6 +1130,71 @@ input[type=range]::-moz-range-thumb {
     color: white;
     cursor: pointer;
   }
+  #benefits {
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+  }
+  .benefit-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border: 5px solid #ff9100;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    padding: 0px 0vw;
+  }
+  .benefit-card img {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    border-top-left-radius: 4.5vw;
+    border-bottom-left-radius: 4.5vw;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .benefit-content {
+    padding: 0px 0vw;
+  }
+  .benefit-header {
+    color: #ff9100;
+    text-align: start;
+    font-size: 2.5vw;
+    font-weight: 800;
+    padding: 10px 4vw;
+    margin-top: 0px;
+  }
+  .benefit-text {
+    color: white;
+    text-align: start;
+    font-size: 1.5vw;
+    line-height: normal;
+    font-weight: 600;
+    padding: 0px 4vw;
+  }
+  #benefit-2 p, #benefit-2 h3, #benefit-4 h3, #benefit-4 p {
+    order: 1;
+  }
+  #benefit-2 h3, #benefit-2 p, #benefit-4 h3, #benefit-4 p {
+    text-align: end;
+  }
+  #benefit-2 img, #benefit-4 img {
+    order: 2;
+    border-top-right-radius: 4.5vw;
+    border-top-left-radius: 0vw;
+    border-bottom-right-radius: 4.5vw;
+    border-bottom-left-radius: 0vw;
+  }
+  #benefit-4 img {
+    width: 35%;
+  }
+  #benefit-4 p {
+    padding-left: 3vw;
+  }
   #product-section {
     margin-top: 50px;
     padding: 0px 8vw;
@@ -1146,14 +1224,14 @@ input[type=range]::-moz-range-thumb {
     width: 100%;
   }
   .product-description {
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 600;
     color: white;
     text-align: center;
     margin: 0px;
   }
   .product-color {
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 600;
     margin: 1vw 0px;
   }
@@ -1162,7 +1240,7 @@ input[type=range]::-moz-range-thumb {
     color: black;
     margin: 0px;
     margin-bottom: 25px;
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
   #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {
     background-color: black;

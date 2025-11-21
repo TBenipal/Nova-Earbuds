@@ -1,5 +1,10 @@
 @use '../abstracts' as a;
 
+
+body, html {
+    scroll-behavior: smooth;
+}
+
 #hero-img #tablet-img, #hero-img #desktop-img {
     display: none;
 }
@@ -107,6 +112,7 @@
 }
 
 .benefit-card {
+    position: relative;
     width: 100%;
     height: auto;
     border: 5px solid a.$primary-color;
@@ -125,6 +131,7 @@
     text-align: center;
     font-size: 6vw;
     font-weight: 800;
+    margin-top: 25px;
 }
 
 .benefit-text {
@@ -133,7 +140,7 @@
     font-size: 4vw;
     line-height: normal;
     font-weight: 600;
-    padding: 0px 50px;
+    padding: 25px 50px;
 }
 
 //Product Items
@@ -294,10 +301,11 @@
         margin-top: 25px;
         width: 100%;
         height: auto;
-        padding: 0px 0vw;
+        padding: 0px 4vw;
     }
 
     .benefit-card {
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -307,17 +315,22 @@
         border: 5px solid a.$primary-color;
         border-radius: 5vw;
         margin-top: 5vw;
+        padding: 0px 0vw;
     }
 
     .benefit-card img {
-        width: 50%; 
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
         border-top-left-radius: 4.5vw;
-        border-top-right-radius: 0px;
         border-bottom-left-radius: 4.5vw;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .benefit-content {
-        padding: 0px 5vw;
+        padding: 0px 0vw;
     }
 
     .benefit-header {
@@ -325,7 +338,8 @@
         text-align: start;
         font-size: 3vw;
         font-weight: 800;
-        padding: 10px 0px;
+        padding: 10px 4vw;
+        margin-top: 0px;
     }
 
     .benefit-text {
@@ -334,7 +348,8 @@
         font-size: 2vw;
         line-height: normal;
         font-weight: 600;
-        padding: 0px;
+        padding: 0px 4vw;
+    
     }
 
     #benefit-2 p, #benefit-2 h3, #benefit-4 h3, #benefit-4 p {
@@ -485,7 +500,85 @@
         cursor: pointer;
     }
 
-        //Product Items
+    //Benifit Section
+    #benefits {
+        margin-top: 0px;
+        width: 100%;
+        height: auto;
+    }
+
+    .benefit-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        border: 5px solid a.$primary-color;
+        border-radius: 5vw;
+        margin-top: 5vw;
+        padding: 0px 0vw;
+    }
+
+    .benefit-card img {
+        width: 50%;
+        object-fit: cover;
+        display: block;
+        border-top-left-radius: 4.5vw;
+        border-bottom-left-radius: 4.5vw;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .benefit-content {
+        padding: 0px 0vw;
+    }
+
+    .benefit-header {
+        color: a.$primary-color;
+        text-align: start;
+        font-size: 2.5vw;
+        font-weight: 800;
+        padding: 10px 4vw;
+        margin-top: 0px;
+    }
+
+    .benefit-text {
+        color: white;
+        text-align: start;
+        font-size: 1.5vw;
+        line-height: normal;
+        font-weight: 600;
+        padding: 0px 4vw;
+    
+    }
+
+    #benefit-2 p, #benefit-2 h3, #benefit-4 h3, #benefit-4 p {
+        order: 1;
+    }
+
+    #benefit-2 h3, #benefit-2 p, #benefit-4 h3, #benefit-4 p {
+        text-align: end;
+    }
+
+    #benefit-2 img, #benefit-4 img {
+        order: 2;
+        border-top-right-radius: 4.5vw;
+        border-top-left-radius: 0vw;
+        border-bottom-right-radius: 4.5vw;
+        border-bottom-left-radius: 0vw;
+    }
+
+    #benefit-4 img {
+        width: 35%;
+    }
+
+    #benefit-4 p {
+        padding-left: 3vw;
+    }
+
+
+    //Product Items
 
     #product-section {
         margin-top: 50px;
@@ -521,7 +614,7 @@
     }
 
     .product-description {
-        font-size: 2.5vw;
+        font-size: 2vw;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -529,7 +622,7 @@
     }
 
     .product-color {
-        font-size: 2vw;
+        font-size: 1.5vw;
         font-weight: 600;
         margin: 1vw 0px;
     }
@@ -539,7 +632,7 @@
         color: black;
         margin: 0px;
         margin-bottom: 25px;
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {

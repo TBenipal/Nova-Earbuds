@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
   </head>
   <body>
 
@@ -18,10 +17,12 @@
 
         <div id="mobile-header">
           <div id="header-logo">
-            <a href="index.html"><img src="images/Nova-Logo.svg" alt="Nova Logo"></a>
+            <a href="index.html">
+              <img src="images/Nova-Logo.svg" alt="Nova Logo">
+            </a>
           </div>
 
-          <button id="hamburger">
+          <button id="hamburger" aria-label="Open navigation menu">
             <img id="hamburger-icon" src="images/Menu-Icon-Orange.svg" alt="Menu">
           </button>
         </div>
@@ -41,49 +42,46 @@
       <h2 class="hidden">Nova Purchase</h2>
       <div id="hero-content" class="col-span-full">
         
-          <div id="hero-img">
-            <img id="mobile-img" src="images/mobile-hero.png">
-            <img id="tablet-img" src="images/tablet-hero.png">
-            <img id="desktop-img" src="images/des-hero.png">
-          </div>
+        <div id="hero-img">
+          <img id="mobile-img" src="images/mobile-hero.png" alt="Nova Earbuds mobile hero image">
+          <img id="tablet-img" src="images/tablet-hero.png" alt="Nova Earbuds tablet hero image">
+          <img id="desktop-img" src="images/des-hero.png" alt="Nova Earbuds desktop hero image">
+        </div>
 
-          <div id="overlay"></div>
+        <div id="overlay"></div>
 
-          <div id="hero-text">
-            <p id="offer">Limited Time !</p>
-            <h3 id="nova-model">Nova Earbuds V1</h3>
-            <button id="hero-btn" class="btn"><a href="#product-section">$59.99</a></button>
-            <p id="hero-description">Nova Earbuds V1 for just $59.99 in any of the provided colors for a limited time only.</p>
-          </div>
+        <div id="hero-text">
+          <p id="offer">Limited Time !</p>
+          <h3 id="nova-model">Nova Earbuds V1</h3>
+          <a id="hero-btn" class="btn" href="#product-section" aria-label="Jump to product section">$59.99</a>
+          <p id="hero-description">Nova Earbuds V1 for just $59.99 in any of the provided colors for a limited time only.</p>
+        </div>
       </div>
 
     </section>
 
     <section id="model">
       <h2 class="hidden">3D-View</h2>
-      <model-viewer src="model/TEXTURED_Nova-Earbuds.gltf" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="0deg 75deg 1.63m" field-of-view="30deg">
-        
-        <button class="Hotspot" id="hs-1" slot="hotspot-1" data-position="0.17933342230798638m 5.045727776967136m -5.642475119600148m" data-normal="1m 1.4900916258489895e-8m 8.730135924262023e-11m" data-visibility-attribute="visible">
+      <model-viewer src="model/TEXTURED_Nova-Earbuds.gltf" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="0deg 75deg 1.63m" field-of-view="30deg" aria-label="3D model of Nova Earbuds">
+
+        <!-- Hotspots kept as buttons for interaction -->
+        <button class="Hotspot" id="hs-1" slot="hotspot-1" data-position="0.17933342230798638m 5.045727776967136m -5.642475119600148m" data-normal="1m 1.4900916258489895e-8m 8.730135924262023e-11m" data-visibility-attribute="visible" aria-label="Hotspot B">
           <div class="HotspotAnnotation" id="hotspot-1"></div>
           <p id="letter-b" class="letter">B</p>
         </button>
-      
-        <button class="Hotspot" id="hs-2" slot="hotspot-2" data-position="0.012522924572604094m 5.1999396886488825m -5.763878243056942m" data-normal="0.9369031657452682m 0.1454511574011386m -0.3178937225350064m" data-visibility-attribute="visible">
+        <button class="Hotspot" id="hs-2" slot="hotspot-2" data-position="0.012522924572604094m 5.1999396886488825m -5.763878243056942m" data-normal="0.9369031657452682m 0.1454511574011386m -0.3178937225350064m" data-visibility-attribute="visible" aria-label="Hotspot D">
           <div class="HotspotAnnotation" id="hotspot-2"></div>
           <p id="letter-d" class="letter">D</p>
         </button>
-        
-        <button class="Hotspot" id="hs-3" slot="hotspot-3" data-position="0.06387165472328057m 5.051544680708091m -5.717367690533023m" data-normal="-6.603527899298338e-10m 0.037160342413743m -0.9993093159536207m" data-visibility-attribute="visible">
+        <button class="Hotspot" id="hs-3" slot="hotspot-3" data-position="0.06387165472328057m 5.051544680708091m -5.717367690533023m" data-normal="-6.603527899298338e-10m 0.037160342413743m -0.9993093159536207m" data-visibility-attribute="visible" aria-label="Hotspot C">
           <div class="HotspotAnnotation" id="hotspot-3"></div>
           <p id="letter-c" class="letter">C</p>
         </button>
-        
-        <button class="Hotspot" id="hs-4" slot="hotspot-4" data-position="0.05429188879176822m 4.854292395079452m -5.6429233766789055m" data-normal="-1.2822233649488215e-8m -0.374606758513506m -0.9271837878630126m" data-visibility-attribute="visible">
+        <button class="Hotspot" id="hs-4" slot="hotspot-4" data-position="0.05429188879176822m 4.854292395079452m -5.6429233766789055m" data-normal="-1.2822233649488215e-8m -0.374606758513506m -0.9271837878630126m" data-visibility-attribute="visible" aria-label="Hotspot E">
           <div class="HotspotAnnotation" id="hotspot-4"></div> 
           <p id="letter-e" class="letter">E</p>
         </button>
-        
-        <button class="Hotspot" id="hs-5" slot="hotspot-5" data-position="0.05900646764100561m 5.148798292410435m -5.408753666427334m" data-normal="3.42285417787025e-8m 3.422854295029556e-8m 0.9999999999999989m" data-visibility-attribute="visible">
+        <button class="Hotspot" id="hs-5" slot="hotspot-5" data-position="0.05900646764100561m 5.148798292410435m -5.408753666427334m" data-normal="3.42285417787025e-8m 3.422854295029556e-8m 0.9999999999999989m" data-visibility-attribute="visible" aria-label="Hotspot A">
           <div class="HotspotAnnotation" id="hotspot-5"></div>
           <p id="letter-a" class="letter">A</p>
         </button>
@@ -100,39 +98,39 @@
 
     <section id="scroll-animation" class="grid-con">
       <div id="scroll" class="col-span-full">
-          <canvas id="explode-view"></canvas> 
+          <canvas id="explode-view" aria-label="Scroll animation view"></canvas> 
       </div>
     </section>
 
     <section id="benefits" class="grid-con">
       <h2 class="hidden">Nove Earbuds V1 Benefits</h2>
 
-      <div id="benefit-1" class="benefit-card col-span-full ">
-        <img class="benefit-img" src="images/Benefit-1.jpg">
+      <div id="benefit-1" class="benefit-card col-span-full l-col-start-2 l-col-end-12">
+        <img class="benefit-img" src="images/Benefit-1.jpg" alt="Long-Lasting Comfort">
         <div class="benefit-content">
           <h3 class="benefit-header">Long-Lasting Comfort</h3>
           <p class="benefit-text">Experience all day wear without fatigue. Nova Earbud V1 is engineered with an ultra light open ear frame and soft skin friendly materials that sit comfortably inside your ear. The ergonomic shape distributes pressure evenly and reduces strain during long listening sessions. Whether you are on the move at work or relaxing Nova keeps your ear feeling good from the first minute to the last.</p>
         </div>
       </div>
 
-      <div id="benefit-2" class="benefit-card col-span-full">
-        <img class="benefit-img" src="images/Powerful-Bass.jpg">
+      <div id="benefit-2" class="benefit-card col-span-full l-col-start-2 l-col-end-12">
+        <img class="benefit-img" src="images/Powerful-Bass.jpg" alt="Powerful Bass">
         <div class="benefit-content">
           <h3 class="benefit-header">Powerful Bass</h3>
           <p class="benefit-text">Experience sound the way it was meant to be heard with Nova Earbuds V1. Engineered with enhanced audio drivers, they deliver deep punchy bass that adds impact to your music while keeping vocals and high frequencies crystal clear. Whether you are listening to beats podcasts or cinematic audio you get balanced performance with both depth and detail so every sound feels immersive rich and full of life.</p>
         </div>
       </div>
 
-      <div id="benefit-3" class="benefit-card col-span-full">
-        <img class="benefit-img" src="images/Sweat-Friendly.png">
+      <div id="benefit-3" class="benefit-card col-span-full l-col-start-2 l-col-end-12">
+        <img class="benefit-img" src="images/Sweat-Friendly.png" alt="Sweat Friendly">
         <div class="benefit-content">
           <h3 class="benefit-header">Sweat Friendy</h3>
           <p class="benefit-text">Stay active with confidence. Nova Earbuds V1 are built with a moisture resistant design that protects the internal components from sweat during workouts and long days on the move. Whether you are at the gym running or commuting these earbuds stay dry comfortable and secure so you can keep going without worrying about damage or slipping.</p>
         </div>
       </div>
 
-      <div id="benefit-4" class="benefit-card col-span-full">
-        <img class="benefit-img" src="images/Free-Move.png">
+      <div id="benefit-4" class="benefit-card col-span-full l-col-start-2 l-col-end-12">
+        <img class="benefit-img" src="images/Free-Move.png" alt="Freedom to Move">
         <div class="benefit-content">
           <h3 class="benefit-header">Freedom to Move</h3>
           <p class="benefit-text">True movement without limits. The Nova Earbuds V1 feature an open ear lightweight design that stays secure without blocking your surroundings. Whether youre working out commuting or multitasking these earbuds let you stay aware and stay active no slipping no distractions just pure freedom to move however you want.</p>
@@ -146,7 +144,7 @@
       <div class="col-span-full">        
           <div id="xray">
               <div id="divisor"></div>
-              <input type="range" min="0" max="100" value="50" id="slider">
+              <input type="range" min="0" max="100" value="50" id="slider" aria-label="X-ray slider">
           </div>    
       </div>
     </section>
@@ -156,37 +154,37 @@
 
       <div id="product-1" class="product col-span-full m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-5">
         <div class="product-content">
-          <img class="product-img" src="images/default-colors.png">
+          <img class="product-img" src="images/default-colors.png" alt="Nova Earbuds V1 Black & Tangelo">
           <p class="product-description">Nova Earbuds V1</p>
           <span class="product-color">Black & Tangelo</span>
-          <button id="btn-1" class="btn"><a>$59.99</a></button>
-          </div>
+          <a id="btn-1" class="btn" href="#product-section" aria-label="Buy Nova Earbuds V1 Black & Tangelo for $59.99">$59.99</a>
+        </div>
       </div>
 
       <div id="product-2" class="product col-span-full m-col-start-5 m-col-end-9 l-col-start-5 l-col-end-9">
         <div class="product-content">
-          <img class="product-img" src="images/black-white.png">
+          <img class="product-img" src="images/black-white.png" alt="Nova Earbuds V1 White & Black">
           <p class="product-description">Nova Earbuds V1</p>
           <span class="product-color">White & Black</span>
-          <button id="btn-2" class="btn"><a>$59.99</a></button>
+          <a id="btn-2" class="btn" href="#product-section" aria-label="Buy Nova Earbuds V1 White & Black for $59.99">$59.99</a>
         </div>
       </div>
 
       <div id="product-3" class="product col-span-full m-col-start-1 m-col-end-5 l-col-start-9 l-col-end-13">
         <div class="product-content">
-          <img class="product-img" src="images/gray-teal.png">
+          <img class="product-img" src="images/gray-teal.png" alt="Nova Earbuds V1 Gray & Teal">
           <p class="product-description">Nova Earbuds V1</p>
           <span class="product-color">Gray & Teal</span>
-          <button id="btn-3" class="btn"><a>$59.99</a></button>
+          <a id="btn-3" class="btn" href="#product-section" aria-label="Buy Nova Earbuds V1 Gray & Teal for $59.99">$59.99</a>
         </div>
       </div>
 
       <div id="product-4" class="product col-span-full m-col-start-5 m-col-end-9 l-col-start-1 l-col-end-5">
         <div class="product-content">
-          <img class="product-img" src="images/purple-green.png">
+          <img class="product-img" src="images/purple-green.png" alt="Nova Earbuds V1 Purple & Green">
           <p class="product-description">Nova Earbuds V1</p>
           <span class="product-color">Purple & Green</span>
-          <button id="btn-4" class="btn"><a>$59.99</a></button>
+          <a id="btn-4" class="btn" href="#product-section" aria-label="Buy Nova Earbuds V1 Purple & Green for $59.99">$59.99</a>
         </div>
       </div>
     </section>
@@ -195,7 +193,9 @@
       <h2 class="hidden">Footer</h2>
       <section id="footer-content" class="col-span-full">
         <div id="footer-logo">
-          <a href="index.html"><img src="images/Nova-Logo.svg" alt="Nova Logo"></a>
+          <a href="index.html">
+            <img src="images/Nova-Logo.svg" alt="Nova Logo">
+          </a>
         </div>
         <h3 id="footer-text">Copyright &copy; Nova. All rights reserved.</h3>
       </section>
