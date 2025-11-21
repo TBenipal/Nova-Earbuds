@@ -1,9 +1,9 @@
 # Nova Earbuds
-
+![Logo Image](./images/Explode_1.webp)
 ## Table of Contents
- - [About](#about)
- - [Skills](#skills)
+ - [Descriptiom](#product-descriptionn)
  - [Languages](#languages)
+ - [Tools](#tools)
  - [Installation](#usage)
  - [Contact](#contact)
 
