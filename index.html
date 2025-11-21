@@ -29,9 +29,9 @@
         <nav id="sidebar">
           <ul>
             <li class="nav-item"><a href="index.html">Home</a></li>
-            <li class="nav-item"><a href="#">3D-Model</a></li>
-            <li class="nav-item"><a href="#">Scroll</a></li>
-            <li class="nav-item"><a href="#">Xray</a></li>
+            <li class="nav-item"><a href="#model">3D-Model</a></li>
+            <li class="nav-item"><a href="#scroll-animation">Scroll</a></li>
+            <li class="nav-item"><a href="#nova-slider">Xray</a></li>
           </ul>
         </nav>
       </div>
@@ -50,9 +50,10 @@
           <div id="overlay"></div>
 
           <div id="hero-text">
-            <p>Limited Time !</p>
-            <h3>Nova Earbuds V1</h3>
-            <button id="hero-btn" class="btn"><a>$59.99</a></button>
+            <p id="offer">Limited Time !</p>
+            <h3 id="nova-model">Nova Earbuds V1</h3>
+            <button id="hero-btn" class="btn"><a href="#product-section">$59.99</a></button>
+            <p id="hero-description">Nova Earbuds V1 for just $59.99 in any of the provided colors for a limited time only.</p>
           </div>
       </div>
 
@@ -95,13 +96,49 @@
       <section class="grid-con">
         <div class="mobile-features col-span-full"></div>
       </section>
-
     </section>
 
     <section id="scroll-animation" class="grid-con">
       <div id="scroll" class="col-span-full">
           <canvas id="explode-view"></canvas> 
       </div>
+    </section>
+
+    <section id="benefits" class="grid-con">
+      <h2 class="hidden">Nove Earbuds V1 Benefits</h2>
+
+      <div id="benefit-1" class="benefit-card col-span-full ">
+        <img class="benefit-img" src="images/Benefit-1.jpg">
+        <div class="benefit-content">
+          <h3 class="benefit-header">Long-Lasting Comfort</h3>
+          <p class="benefit-text">Experience all day wear without fatigue. Nova Earbud V1 is engineered with an ultra light open ear frame and soft skin friendly materials that sit comfortably inside your ear. The ergonomic shape distributes pressure evenly and reduces strain during long listening sessions. Whether you are on the move at work or relaxing Nova keeps your ear feeling good from the first minute to the last.</p>
+        </div>
+      </div>
+
+      <div id="benefit-2" class="benefit-card col-span-full">
+        <img class="benefit-img" src="images/Powerful-Bass.jpg">
+        <div class="benefit-content">
+          <h3 class="benefit-header">Powerful Bass</h3>
+          <p class="benefit-text">Experience sound the way it was meant to be heard with Nova Earbuds V1. Engineered with enhanced audio drivers, they deliver deep punchy bass that adds impact to your music while keeping vocals and high frequencies crystal clear. Whether you are listening to beats podcasts or cinematic audio you get balanced performance with both depth and detail so every sound feels immersive rich and full of life.</p>
+        </div>
+      </div>
+
+      <div id="benefit-3" class="benefit-card col-span-full">
+        <img class="benefit-img" src="images/Sweat-Friendly.png">
+        <div class="benefit-content">
+          <h3 class="benefit-header">Sweat Friendy</h3>
+          <p class="benefit-text">Stay active with confidence. Nova Earbuds V1 are built with a moisture resistant design that protects the internal components from sweat during workouts and long days on the move. Whether you are at the gym running or commuting these earbuds stay dry comfortable and secure so you can keep going without worrying about damage or slipping.</p>
+        </div>
+      </div>
+
+      <div id="benefit-4" class="benefit-card col-span-full">
+        <img class="benefit-img" src="images/Free-Move.png">
+        <div class="benefit-content">
+          <h3 class="benefit-header">Freedom to Move</h3>
+          <p class="benefit-text">True movement without limits. The Nova Earbuds V1 feature an open ear lightweight design that stays secure without blocking your surroundings. Whether youre working out commuting or multitasking these earbuds let you stay aware and stay active no slipping no distractions just pure freedom to move however you want.</p>
+        </div>
+      </div>
+
     </section>
 
     <section id="nova-slider" class="grid-con">
@@ -111,6 +148,46 @@
               <div id="divisor"></div>
               <input type="range" min="0" max="100" value="50" id="slider">
           </div>    
+      </div>
+    </section>
+
+    <section id="product-section" class="grid-con">
+      <h2 id="product-header" class="col-span-full">Products</h2>
+
+      <div id="product-1" class="product col-span-full m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-5">
+        <div class="product-content">
+          <img class="product-img" src="images/default-colors.png">
+          <p class="product-description">Nova Earbuds V1</p>
+          <span class="product-color">Black & Tangelo</span>
+          <button id="btn-1" class="btn"><a>$59.99</a></button>
+          </div>
+      </div>
+
+      <div id="product-2" class="product col-span-full m-col-start-5 m-col-end-9 l-col-start-5 l-col-end-9">
+        <div class="product-content">
+          <img class="product-img" src="images/black-white.png">
+          <p class="product-description">Nova Earbuds V1</p>
+          <span class="product-color">White & Black</span>
+          <button id="btn-2" class="btn"><a>$59.99</a></button>
+        </div>
+      </div>
+
+      <div id="product-3" class="product col-span-full m-col-start-1 m-col-end-5 l-col-start-9 l-col-end-13">
+        <div class="product-content">
+          <img class="product-img" src="images/gray-teal.png">
+          <p class="product-description">Nova Earbuds V1</p>
+          <span class="product-color">Gray & Teal</span>
+          <button id="btn-3" class="btn"><a>$59.99</a></button>
+        </div>
+      </div>
+
+      <div id="product-4" class="product col-span-full m-col-start-5 m-col-end-9 l-col-start-1 l-col-end-5">
+        <div class="product-content">
+          <img class="product-img" src="images/purple-green.png">
+          <p class="product-description">Nova Earbuds V1</p>
+          <span class="product-color">Purple & Green</span>
+          <button id="btn-4" class="btn"><a>$59.99</a></button>
+        </div>
       </div>
     </section>
 
