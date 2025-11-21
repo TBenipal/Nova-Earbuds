@@ -9,7 +9,7 @@
     width: 100%;
     height: auto;
     padding-top: 125px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     margin-bottom: 10px;
     background-color: white;
 }
@@ -38,13 +38,19 @@
     font-size: 5vw;
     font-weight: 600;
     text-align: center;
-    line-height: 0px;
 }
 
 #hero-text h3 {
     font-size: 7vw;
     color: white;
     text-align: center;
+}
+
+#hero-text #hero-description {
+    font-size: 3.5vw;
+    padding: 15px 15vw 0px 15vw;
+    color: white;
+    line-height: normal;
 }
 
 .btn {
@@ -57,6 +63,14 @@
     border-radius: 10px;
     color: white;
     cursor: pointer;
+}
+
+#hero-btn a {
+    color: white;
+}
+
+#hero-btn:hover a {
+    color: a.$primary-color; /* same as the button hover text color */
 }
 
 .btn:hover {
@@ -81,6 +95,106 @@
     flex-direction: column;
     align-items: center;
     z-index: 2; 
+}
+
+//Benefits Section
+
+#benefits {
+    margin-top: 25px;
+    width: 100%;
+    height: auto;
+    padding: 0px 1vw;
+}
+
+.benefit-card {
+    width: 100%;
+    height: auto;
+    border: 5px solid a.$primary-color;
+    border-radius: 5vw;
+    margin-top: 10vw;
+}
+
+.benefit-card img {
+    width: 100%; 
+    border-top-right-radius: 4.5vw;
+    border-top-left-radius: 4.5vw;
+}
+
+.benefit-header {
+    color: a.$primary-color;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 800;
+}
+
+.benefit-text {
+    color: white;
+    text-align: center;
+    font-size: 4vw;
+    line-height: normal;
+    font-weight: 600;
+    padding: 0px 50px;
+}
+
+//Product Items
+
+#product-section {
+    margin-top: 50px;
+    padding: 0vw 10vw;
+}
+
+#product-header {
+    font-size: 8vw;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product {
+    background-color: a.$primary-color;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 5vw;
+    margin: 2vw;
+}
+
+.product img {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.product-description {
+    font-size: 5vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin: 0px;
+}
+
+.product-color {
+    font-size: 3.5vw;
+    font-weight: 600;
+    margin: 2vw 0px;
+}
+
+#btn-1, #btn-2, #btn-3, #btn-4 {
+    background-color: white;
+    color: black;
+    margin: 0px;
+    margin-bottom: 25px;
+    font-size: 4.5vw;
+}
+
+#btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {
+    background-color: black;
+    color: a.$primary-color;
 }
 
 @media screen and (min-width: 768px) {
@@ -123,7 +237,6 @@
         order: 1;
         flex: 1;
         align-items: start;
-        margin-bottom: 5vw;
     }
 
     #hero-text p {
@@ -138,6 +251,13 @@
         font-size: 5.4vw;
         color: white;
         text-align: left;
+    }
+
+    #hero-text #hero-description {
+        font-size: 2vw;
+        padding: 25px 10vw 0px 0vw;
+        color: white;
+        line-height: normal;
     }
 
     .btn {
@@ -168,6 +288,140 @@
         z-index: 1;
     }
 
+    //Benifit Section
+
+    #benefits {
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        padding: 0px 0vw;
+    }
+
+    .benefit-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        border: 5px solid a.$primary-color;
+        border-radius: 5vw;
+        margin-top: 5vw;
+    }
+
+    .benefit-card img {
+        width: 50%; 
+        border-top-left-radius: 4.5vw;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 4.5vw;
+    }
+
+    .benefit-content {
+        padding: 0px 5vw;
+    }
+
+    .benefit-header {
+        color: a.$primary-color;
+        text-align: start;
+        font-size: 3vw;
+        font-weight: 800;
+        padding: 10px 0px;
+    }
+
+    .benefit-text {
+        color: white;
+        text-align: start;
+        font-size: 2vw;
+        line-height: normal;
+        font-weight: 600;
+        padding: 0px;
+    }
+
+    #benefit-2 p, #benefit-2 h3, #benefit-4 h3, #benefit-4 p {
+        order: 1;
+    }
+
+    #benefit-2 h3, #benefit-2 p, #benefit-4 h3, #benefit-4 p {
+        text-align: end;
+    }
+
+    #benefit-2 img, #benefit-4 img {
+        order: 2;
+        border-top-right-radius: 4.5vw;
+        border-top-left-radius: 0vw;
+        border-bottom-right-radius: 4.5vw;
+        border-bottom-left-radius: 0vw;
+    }
+
+    #benefit-4 img {
+        width: 40%;
+    }
+
+    #benefit-4 p {
+        padding-left: 1vw;
+    }
+
+    //Product Items
+
+    #product-section {
+        margin-top: 50px;
+        padding: 0px 25px;
+    }
+
+    #product-header {
+        font-size: 6vw;
+        font-weight: 800;
+        color: white;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    .product-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        background-color: a.$primary-color;
+        height: auto;
+        border: 5px solid white;
+        border-radius: 5vw;
+        margin: 0px;
+        margin: 1vw;
+    }
+
+    .product img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .product-description {
+        font-size: 3.5vw;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        margin: px;
+    }
+
+    .product-color {
+        font-size: 3vw;
+        font-weight: 600;
+        margin: 2vw 0px;
+    }
+
+    #btn-1, #btn-2, #btn-3, #btn-4 {
+        background-color: white;
+        color: black;
+        margin: 0px;
+        margin-bottom: 25px;
+        font-size: 3vw;
+    }
+
+    #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {
+        background-color: black;
+        color: a.$primary-color;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -183,8 +437,8 @@
     }
 
     #hero {
-        padding-top: 125px;
-        padding-bottom: 25px;
+        padding-top: 150px;
+        padding-bottom: 50px;
         padding-right: 10vw;
         padding-left: 10vw;
         
@@ -194,7 +448,7 @@
         order: 1;
         flex: 1;
         align-items: start;
-        margin-bottom: 5vw;
+        margin-bottom: 0vw;
     }
 
     #hero-text p {
@@ -211,6 +465,14 @@
         text-align: left;
     }
 
+    #hero-text #hero-description {
+        font-size: 1.5vw;
+        padding: 25px 10vw 0px 0vw;
+        color: white;
+        line-height: normal;
+    }
+
+
     .btn {
         margin-top: 25px;
         font-size: 2.5vw;
@@ -221,6 +483,68 @@
         border-radius: 10px;
         color: white;
         cursor: pointer;
+    }
+
+        //Product Items
+
+    #product-section {
+        margin-top: 50px;
+        padding: 0px 8vw;
+    }
+
+    #product-header {
+        font-size: 4vw;
+        font-weight: 800;
+        color: white;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    .product-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        background-color: a.$primary-color;
+        height: auto;
+        border: 5px solid white;
+        border-radius: 2vw;
+        margin: 0px;
+        margin: 1vw;
+    }
+
+    .product img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .product-description {
+        font-size: 2.5vw;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .product-color {
+        font-size: 2vw;
+        font-weight: 600;
+        margin: 1vw 0px;
+    }
+
+    #btn-1, #btn-2, #btn-3, #btn-4 {
+        background-color: white;
+        color: black;
+        margin: 0px;
+        margin-bottom: 25px;
+        font-size: 2vw;
+    }
+
+    #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {
+        background-color: black;
+        color: a.$primary-color;
     }
 
 }

@@ -83,7 +83,132 @@
 
   showHeader();
 
+  //GSAP Animation for hero section
+  function showHero() {
+    const offer = document.querySelector("#offer");
+    const model = document.querySelector("#nova-model");
+    const btn = document.querySelector("#hero-btn");
+    const description = document.querySelector("#hero-description");
+    const screen = window.innerWidth;
 
+    if(screen < 768) {
+      gsap.fromTo(offer, {
+        opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: .1,
+          scrollTrigger: {
+            trigger: offer,
+            start: "top 100%",      // when the offer enters the viewport
+            end: "bottom 10%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+
+      gsap.fromTo(model, {
+        opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: .3,
+          scrollTrigger: {
+            trigger: offer,
+            start: "top 100%",      // when the offer enters the viewport
+            end: "bottom 15%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+
+      gsap.fromTo(btn, {
+        opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: .5,
+          scrollTrigger: {
+            trigger: offer,
+            start: "top 100%",      // when the offer enters the viewport
+            end: "bottom 5%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+
+      gsap.fromTo(description, {
+        opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: .4,
+          scrollTrigger: {
+            trigger: offer,
+            start: "top 100%",      // when the offer enters the viewport
+             end: "bottom 0%",
+            toggleActions: "play reverse play reverse"
+          }
+        }
+      );
+    } 
+    
+    else if(screen >= 768) {
+      gsap.from(offer, {
+        x: -800,
+        duration: .5,
+        ease: "ease-in",
+        delay: .4,
+        scrollTrigger: {
+          trigger: offer,       // starts when the model enters view
+          start: "top 80%",     // adjust as needed
+          toggleActions: "play reverse play reverse"
+         }
+      })
+
+      gsap.from(model, {
+        x: -800,
+        duration: .5,
+        ease: "ease-in",
+        delay: .6,
+        scrollTrigger: {
+          trigger: model,       // starts when the model enters view
+          start: "top 80%",     // adjust as needed
+          toggleActions: "play reverse play reverse"
+         }
+      })
+
+      gsap.from(description, {
+        x: -800,
+        duration: .5,
+        ease: "ease-in",
+        delay: .7,
+        scrollTrigger: {
+          trigger: description,       // starts when the model enters view
+          start: "top 80%",     // adjust as needed
+          toggleActions: "play reverse play reverse"
+         }
+      })
+
+      gsap.from(btn, {
+        x: -800,
+        duration: .5,
+        ease: "ease-in",
+        delay: .8,
+        scrollTrigger: {
+          trigger: btn,       // starts when the model enters view
+          start: "top 80%",     // adjust as needed
+          toggleActions: "play reverse play reverse"
+         }
+      }) 
+    }
+  }
+
+  showHero();
 
 
   //GSAP Animation for scroll effect
@@ -120,7 +245,7 @@
             duration: 1,
             scrollTrigger: {
               trigger: feature,
-              start: "top 80%",
+              start: "top 90%",
               toggleActions: "play reverse play reverse"
             }
           }
@@ -140,7 +265,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -160,7 +285,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -180,7 +305,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
@@ -200,7 +325,7 @@
           duration: 1,
           scrollTrigger: {
             trigger: feature,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play reverse play reverse"
           }
         }
