@@ -128,7 +128,8 @@ ul, li {
       padding: 5px 15px;
       font-family: "Kanit";
       font-weight: 600;
-      width: 100%;                
+      width: 100%;  
+      transition: all 0.3s ease;              
   }
 
   #sidebar ul .nav-item a:hover, #sidebar ul .nav-item a:active  {
