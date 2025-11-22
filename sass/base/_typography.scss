@@ -1,11 +1,11 @@
-@use '../abstracts';
+@use '../abstracts' as a;
 
 body {
-    font-family: abstracts.$body-font-family;
+    font-family: a.$primary-font;
 }
 
 h1, h2, h3 {
-    font-family: abstracts.$heading-font-family;
+    font-family: a.$primary-font;
 }
 
 h2 {
