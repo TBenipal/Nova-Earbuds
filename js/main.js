@@ -221,7 +221,7 @@
 
       if(screen < 768) {
         gsap.from(benefit1, {
-          x: -1920,
+          x: -800,
           duration: 1,
           ease: "ease-in",
           scrollTrigger: {
@@ -232,7 +232,7 @@
         })
 
         gsap.from(benefit2, {
-          x: -1920,
+          x: -800,
           duration: 1,
           ease: "ease-in",
           scrollTrigger: {
@@ -243,7 +243,7 @@
         })
 
         gsap.from(benefit3, {
-          x: -1920,
+          x: -800,
           duration: 1,
           ease: "ease-in",
           scrollTrigger: {
@@ -254,7 +254,7 @@
         })
 
         gsap.from(benefit4, {
-          x: -1920,
+          x: -800,
           duration: 1,
           ease: "ease-in",
           scrollTrigger: {
@@ -358,6 +358,494 @@
       }
     }
     showBenefits();
+
+  function showRating() {
+    const screen = window.innerWidth;
+    const rheader = document.querySelector("#rating-header");
+    const star1 = document.querySelector("#star-1");
+    const star2 = document.querySelector("#star-2");
+    const star3 = document.querySelector("#star-3");
+    const star4 = document.querySelector("#star-4");
+    const star5 = document.querySelector("#star-5");
+    const percent = document.querySelector("#percentage");
+    const rate = document.querySelector("#rating");
+    const progress1 = document.querySelector("#progress-1");
+    const progress2 = document.querySelector("#progress-2");
+    const progress3 = document.querySelector("#progress-3");
+    const progress4 = document.querySelector("#progress-4");
+
+    if(screen < 768) {
+      gsap.fromTo(rheader, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: rheader,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star1, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: star1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star2, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .2,
+        scrollTrigger: {
+          trigger: star2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star3, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .3,
+        scrollTrigger: {
+          trigger: star3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star4, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .4,
+        scrollTrigger: {
+          trigger: star4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star5, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .5,
+        scrollTrigger: {
+          trigger: star5,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(percent, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .6,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(rate, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .7,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress1, {
+        x: -800,
+        duration: 1,
+        delay: .8,
+        scrollTrigger: {
+          trigger: progress1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress2, {
+        x: 800,
+        duration: 1,
+        delay: .9,
+        scrollTrigger: {
+          trigger: progress2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress3, {
+        x: -800,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: progress3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress4, {
+        x: 800,
+        duration: 1,
+        delay: 1.1,
+        scrollTrigger: {
+          trigger: progress4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+    }
+
+    else if(screen > 768 && screen < 1200) {
+
+      gsap.fromTo(rheader, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: rheader,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star1, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: star1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star2, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .2,
+        scrollTrigger: {
+          trigger: star2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star3, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .3,
+        scrollTrigger: {
+          trigger: star3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star4, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .4,
+        scrollTrigger: {
+          trigger: star4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star5, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .5,
+        scrollTrigger: {
+          trigger: star5,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(percent, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .6,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(rate, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .7,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress1, {
+        x: -1920,
+        duration: 1,
+        delay: .8,
+        scrollTrigger: {
+          trigger: progress1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress2, {
+        x: 1920,
+        duration: 1,
+        delay: .9,
+        scrollTrigger: {
+          trigger: progress2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress3, {
+        x: -1920,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: progress3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress4, {
+        x: 1920,
+        duration: 1,
+        delay: 1.1,
+        scrollTrigger: {
+          trigger: progress4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+    }
+
+    else if(screen >= 1200) {
+            gsap.fromTo(rheader, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: rheader,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star1, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: star1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star2, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .2,
+        scrollTrigger: {
+          trigger: star2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star3, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .3,
+        scrollTrigger: {
+          trigger: star3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star4, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .4,
+        scrollTrigger: {
+          trigger: star4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(star5, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .5,
+        scrollTrigger: {
+          trigger: star5,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(percent, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .6,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.fromTo(rate, {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: .7,
+        scrollTrigger: {
+          trigger: percent,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress1, {
+        x: -1920,
+        duration: 1,
+        delay: .7,
+        scrollTrigger: {
+          trigger: progress1,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress2, {
+        x: 1920,
+        duration: 1,
+        delay: .8,
+        scrollTrigger: {
+          trigger: progress2,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress3, {
+        x: -1920,
+        duration: 1,
+        delay: .9,
+        scrollTrigger: {
+          trigger: progress3,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+
+      gsap.from(progress4, {
+        x: 1920,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: progress4,
+          top: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      })
+    }
+  }
+  showRating();
+
+  
 
 
   //GSAP Animation for Scroll Effect

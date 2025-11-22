@@ -589,7 +589,7 @@ input[type=range]::-moz-range-thumb {
 }
 @media screen and (min-width: 1200px) {
   #nova-slider {
-    margin: 75px 8vw;
+    margin: 75px 0vw;
     padding: 0px 0vw;
   }
   #xray {
@@ -599,7 +599,7 @@ input[type=range]::-moz-range-thumb {
     background-size: cover;
     border: 5px solid #ff9100;
     border-radius: 15px;
-    max-width: 1400px;
+    max-width: 1280px;
     height: auto;
     margin: 0 auto;
   }
@@ -1345,7 +1345,7 @@ body, html {
   }
   #product-section {
     margin-top: 50px;
-    padding: 0px 8vw;
+    padding: 0px 10vw;
   }
   .header {
     font-size: 4vw;
