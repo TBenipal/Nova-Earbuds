@@ -184,7 +184,7 @@ input[type=range]::-moz-range-thumb {
 @media screen and (min-width: 1200px) {
 
   #nova-slider {
-    margin: 75px 8vw;
+    margin: 75px 0vw;
     padding: 0px 0vw;
   }
 
@@ -195,7 +195,7 @@ input[type=range]::-moz-range-thumb {
     background-size: cover;
     border: 5px solid a.$primary-color;
     border-radius: 15px;
-    max-width: 1400px;
+    max-width: 1280px;
     height: auto;
     margin: 0 auto;
   }
